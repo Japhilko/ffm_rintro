@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+author: "Jan-Philipp Kolb"
+date: "15 Mai 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Einstieg in R
+
+-         Das Programm R, CRAN 
+-         Aufbau von R Studio als Editor, Erwähnung weiterer Editoren (RKward etc.), Hilfefunktion, Hilfe im Internet
+-         Packages
+ 
+## Das Konzept von R und Programmierung mit R
+-         Die Programmiersprache, Objekte und Objektorientierung, Wertezuweisung, Funktionen 
+-         Kommentierung zur Dokumentation der Programmierung 
+-         Variablentypen und ihre Eigenschaften (Vektoren, Data Frames, Listen…) 
+ 
+## Anwendungen  
+-         Datenimport, -export unterschiedlicher Dateiformate (.xls, .csv, .txt) – mit Übung
+-         Daten(tabellen)manipulation, Variablen auswählen, Bildung neuer Variablen, bedingtes Umkodieren, einfache Berechnungen, fehlende Werte – mit Übung
+-         Auswertungen, Statistische Kennzahlen  – mit Übung
+-         Beispiele für einfache Uni-, Bivariater Grafiken – mit Übung
+ 
