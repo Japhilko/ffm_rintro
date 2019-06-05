@@ -1,0 +1,25 @@
+---
+title: "Hallo Welt"
+author: "Jan-Philipp Kolb"
+date: "5 Juni 2019"
+output: 
+  beamer_presentation: 
+    colortheme: whale
+    theme: Warsaw
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Einführung
+
+- In welchem Bereich arbeiten Sie?
+- Welche Programme nutzen Sie bisher zur Datenanalyse?
+- Haben Sie schon einmal mit R gearbeitet, wie ist Ihr Kenntnisstand?
+- Was sind Ihre Erwartungen an den Kurs?
+
+<!--
+Berkeley
+-->

@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Einführung in R"
 author: "Jan-Philipp Kolb"
 date: "15 Mai 2019"
 output: html_document
