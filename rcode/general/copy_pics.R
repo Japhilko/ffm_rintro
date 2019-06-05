@@ -59,7 +59,7 @@ new.folder.fig <- paste0(new.folder,"/figure/")
 
 setwd(new.folder)
 
-myfiles <- c("WarumR.Rmd","FreundGUI.Rmd")
+myfiles <- c("WarumR.Rmd","FreundGUI.Rmd","GrundlagenR.Rmd")
 
 i <- length(myfiles)
 myfile <- myfiles[i]

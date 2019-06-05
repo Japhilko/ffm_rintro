@@ -1,0 +1,111 @@
+---
+title: "Grundlagen R"
+author: "Jan-Philipp Kolb"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  beamer_presentation: 
+    colortheme: crane
+    fig_height: 3
+    fig_width: 5
+    fonttheme: structuresmallcapsserif
+    highlight: tango
+    theme: Warsaw
+  pdf_document: 
+    keep_tex: yes
+    toc: yes
+  slidy_presentation: 
+    css: mycss.css
+    keep_md: yes
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## R ist eine Objekt-orientierte Sprache
+
+### Vektoren und Zuweisungen
+
+-  R ist eine Objekt-orientierte Sprache
+-  `<-` ist der Zuweisungsoperator
+
+```{r}
+b <- c(1,2) #erzeugt ein Objekt mit den Zahlen 1 und 2
+```
+-  Eine Funktion kann auf dieses Objekt angewendet werden:
+
+```{r}
+mean(b) # berechnet den Mittelwert
+```
+
+## Objektstruktur
+
+Mit den folgenden Funktionen können wir etwas über die Eigenschaften des Objekts lernen:
+
+```{r}
+length(b) # b hat die Länge 2
+```
+
+
+```{r}
+str(b) # b ist ein numerischer Vektor
+```
+
+
+## Funktionen im base-Paket
+
+|Funktion |Bedeutung          |Beispiel  |
+|:--------|:------------------|:---------|
+|length() |Länge              |length(b) |
+|max()    |Maximum            |max(b)    |
+|min()    |Minimum            |min(b)    |
+|sd()     |Standardabweichung |sd(b)     |
+|var()    |Varianz            |var(b)    |
+|mean()   |Mittelwert         |mean(b)   |
+|median() |Median             |median(b) |
+
+Diese Funktionen brauchen nur ein Argument.
+
+## Funktionen mit mehr Argumenten
+
+Andere Funktionen brauchen mehr Argumente:
+
+|Argument   |Bedeutung         |Beispiel       |
+|:----------|:-----------------|:--------------|
+|quantile() |90 % Quantile     |quantile(b,.9) |
+|sample()   |Stichprobe ziehen |sample(b,1)    |
+
+
+## Beispiel - Funktionen mit einem Argument
+
+```{r}
+max(b)
+min(b)
+sd(b)
+var(b)
+```
+
+## Funktionen mit einem Argument
+
+```{r}
+mean(b)
+median(b)
+```
+
+
+## Funktionen mit mehr Argumenten
+
+```{r}
+quantile(b,.9)
+sample(b,1) 
+```
+
+
+## [Übersicht Befehle](http://cran.r-project.org/doc/manuals/R-intro.html)
+
+<http://cran.r-project.org/doc/manuals/R-intro.html>
+
+![](figure/UebersichtBefehle.PNG)
+
