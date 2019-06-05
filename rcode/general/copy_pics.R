@@ -1,5 +1,5 @@
 # Jan-Philipp Kolb
-# Mon Jan 07 11:44:06 2019
+# Wed Jun 05 14:31:31 2019
 
 
 ###############################################
@@ -42,14 +42,34 @@ if (sysInfo["nodename"]=="SVMARDP07"){
 if (sysInfo["nodename"]=="MAC14077"){
   new.folder <- "D:/Daten/GitHub/IntroR/buildingblocks/" 
   new.folder <- "D:/Daten/GitHub/IntroR/2019/slides/"
+  new.folder <- "D:/Daten/GitHub/ffm_rintro/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/r_intro_gp18/slides/" 
   path_wherepicslive <- "D:/Daten/GitHub/geocourse/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/geohealth/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/RInterfaces/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/GeoData/2017/slides/"
+  path_wherepicslive <- "D:/Daten/GitHub/GeoData/2019/slides/"
+  path_wherepicslive <- "D:/Daten/GitHub/IntroR/2019/slides/"
 }
 
 new.folder.fig <- paste0(new.folder,"/figure/")
+
+#################################
+# Für den Workshop in FFM 2019
+
+setwd(new.folder)
+
+myfiles <- c("WarumR.Rmd","FreundGUI.Rmd")
+
+i <- length(myfiles)
+myfile <- myfiles[i]
+txt <- readLines(myfile)
+pics3 <- prep_picnames(txt)
+
+
+setwd(path_wherepicslive)
+file.copy(pics3, new.folder.fig)
+
 
 #################################
 # Für meinen Gesis Workshop 2019

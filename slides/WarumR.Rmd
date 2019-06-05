@@ -1,28 +1,37 @@
 ---
-title: "Hallo Welt"
+title: "Intro Datenanalyse mit R - Warum R eine gute Wahl ist?"
 author: "Jan-Philipp Kolb"
-date: "5 Juni 2019"
-output: 
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
   beamer_presentation: 
-    colortheme: whale
-    theme: Warsaw
+    colortheme: dolphin
+    fonttheme: structuresmallcapsserif
+    fig_caption: no
+    fig_height: 3
+    fig_width: 5
+    highlight: zenburn
+    theme: Dresden
+  pdf_document: 
+    keep_tex: yes
+    toc: yes
+  slidy_presentation: 
+    css: mycss.css
+    keep_md: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=F,warning = F)
 ```
 
+## Um rein zu kommen
 
-## Kleine Vorstellungsrunde
+### Kleine Vorstellungsrunde
 
-- In welchem Bereich arbeiten Sie?
-- Welche Programme nutzen Sie bisher zur Datenanalyse?
-- Haben Sie schon einmal mit R gearbeitet, wie ist Ihr Kenntnisstand?
-- Was sind Ihre Erwartungen an den Kurs?
-
-<!--
-Berkeley
--->
+- Wo kommt Ihr her?
+- Wo arbeitet und studiert Ihr?
+- Habt Ihr Erfahrungen mit Programmiersprachen / Statistiksoftware? Wenn ja welche?
+- Was sind Eure Erwartungen für diesen Kurs? 
 
 ## Disclaimer/ Informationen vorab
 
