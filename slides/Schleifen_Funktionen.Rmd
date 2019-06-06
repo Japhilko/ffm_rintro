@@ -1,0 +1,45 @@
+---
+title: "Schleifen und Funktionen"
+author: "Jan-Philipp Kolb"
+date: "6 6 2019"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## [Eine erste Schleife](https://www.datacamp.com/community/tutorials/tutorial-on-loops-in-r)
+
+<!--
+https://www.datacamp.com/community/tutorials/tutorial-on-loops-in-r
+
+https://www.r-exercises.com/2018/03/30/loops-in-r-exercises/
+-->
+
+```{r}
+  # Ein Container für die Ergebnisse
+usq <- vector()
+
+for(i in 1:10) {
+  usq[i] <- i*i
+  print(usq[i],"\n")
+}
+
+print(i)
+```
+
+
+## Aufgabe - Programmierung von Schleifen
+
+<!--
+- Schreiben Sie eine for-Schleife, die über die Zahlen 1 bis 7 iteriert und die jewilige Zahl mit sich selbst multipliziert. Geben Sie das Ergebnis mit `print()` aus.
+-->
+
+- Schreiben Sie eine for-Schleife, die über die Spaltennamen des `iris`-Datensatzes iteriert und drucken Sie jeweils den Spaltennamen zusammen mit der Anzahl der Zeichen im Spaltennamen in Klammern. Beispielausgabe: Sepal.Length (12). Verwenden Sie die folgenden Funktionen `print()`, `paste0()` und `nchar()`.
+
+## Funktionen
+
+<!--
+https://www.r-exercises.com/2018/04/27/well-behaved-functions-exercises/
+-->

@@ -1,0 +1,15 @@
+---
+title: "Notizen zum Kursablauf"
+author: "Jan-Philipp Kolb"
+date: "6 6 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 
+
+Editor Fond - Consolas
+Editor Theme - Xcode

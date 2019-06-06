@@ -1,6 +1,7 @@
 # Jan-Philipp Kolb
 # Wed Jun 05 14:31:31 2019
 
+library(magrittr)
 
 ###############################################
 # functions
@@ -9,10 +10,11 @@ prep_picnames <- function(txt){
   ind <- agrep("![]",txt)
   pics <- txt[ind]
   pics2 <- strsplit(split = "\\(",x=pics)
-  pics3 <- unlist(lapply(pics2,function(x)ifelse(length(x)==3,x[3],x[2])))
+  pics3 <- unlist(lapply(pics2,function(x)ifelse(length(x)==3,x[3],x[2]))) 
   pics3 <- gsub("filepath,\"","",pics3)
   pics3 <- gsub("\\)","",pics3)
   pics3 <- gsub("\")`)","",pics3)
+  pics3 <- pics3 %>% strsplit(split = "\\{") %>% lapply(function(x)x[1]) %>% unlist()
   ind_https <- agrep("https",pics3)
   if (length(ind_https)!=0){
     pics3 <- pics3[-ind_https]  
@@ -28,7 +30,7 @@ sysInfo <- Sys.info()
 if (sysInfo["nodename"]=="MAL15037"){
   new.folder <- "D:/Eigene Dateien/Dokumente/GitHub/IntroR/buildingblocks"
   new.folder <- "D:/github/IntroR/2019/slides/"
-  new.folder <- "D:/Eigene Dateien/Dokumente/GitHub/ffm_rintro"
+  new.folder <- "D:/github/ffm_rintro/slides/"
   path_wherepicslive <- "D:/GitHub/geocourse/slides/"
   path_wherepicslive <- "D:/Eigene Dateien/Dokumente/GitHub/r_intro_gp18/slides/"
   path_wherepicslive <- "D:/github/IntroR/2019/slides/"
@@ -61,7 +63,7 @@ new.folder.fig <- paste0(new.folder,"/figure/")
 
 setwd(new.folder)
 
-myfiles <- c("WarumR.Rmd","FreundGUI.Rmd","GrundlagenR.Rmd")
+myfiles <- c("WarumR.Rmd","FreundGUI.Rmd","GrundlagenR.Rmd","Import.Rmd","Hilfe.Rmd")
 
 i <- length(myfiles)
 myfile <- myfiles[i]
