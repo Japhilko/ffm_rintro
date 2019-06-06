@@ -164,6 +164,29 @@ R-project + "was ich schon immer wissen wollte"
 
 ![](figure/quickR.PNG)
 
+## [Das Paket `swirl`](https://swirlstats.com/)
+
+![](figure/swirl.PNG)
+
+## Der Start mit `swirl`
+
+```{r,eval=F,echo=F}
+install.packages("swirl")
+```
+
+
+```{r}
+library(swirl)
+```
+
+```{r,eval=F}
+swirl()
+```
+
+![](figure/swirl_start.PNG)
+
+
+
 
 ## Weitere Links
 
@@ -186,3 +209,5 @@ R-project + "was ich schon immer wissen wollte"
 ###
 
 - Quelle: - LABORATORY FOR APPLIED STATISTICS: Intro to R - [**Exercises**](http://web.math.ku.dk/~helle/R-intro/exercises.pdf) 
+
+

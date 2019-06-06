@@ -1,0 +1,188 @@
+---
+title: "Addons"
+author: "Jan-Philipp Kolb"
+date: "6 Juni 2019"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+## [Das `reshape` Paket](https://www.statmethods.net/management/reshape.html)
+
+```{r,echo=F,eval=F}
+install.packages("reshape")
+```
+
+
+### Beispiel Datensatz 
+
+```{r}
+(mydata <- data.frame(id=rep(1:2,each=2), 
+                     time=rep(c(1,2),2),
+                     x1 = c(5,3,6,2),
+                     x2 = c(6,5,1,4)))
+```
+
+
+## Beispiel mit dem Befehl `melt`
+
+```{r}
+library(reshape)
+melt(mydata, id=c("id","time"))   
+```
+
+
+<!--
+http://rprogramming.net/recode-data-in-r/
+-->
+
+<!--
+## [`recode`](https://www.r-bloggers.com/recoding-variables-in-r-pedagogic-considerations/) Befehl im Paket `car`
+
+```{r,echo=F,eval=F}
+install.packages("car")
+```
+
+```{r}
+library(car)
+```
+
+```{r,eval=T}
+head(wbkat)
+head(recode(wbkat,"'niedrig'='1'"))
+```
+
+
+-->
+
+
+<!--
+## Das Paket `tibble`
+
+```{r,eval=F,echo=F}
+install.packages("tibble")
+```
+
+### Difference between tibble and data.frame
+
+- There are three key differences between tibbles and data frames: printing, subsetting, and recycling rules.
+
+
+```{r}
+library(tibble)
+(gpanel1 <- as_tibble(dat))
+```
+
+-->
+
+
+## Edgar Anderson's Iris Datensatz
+
+```{r}
+data(iris)
+```
+
+
+```{r,eval=F}
+head(iris)
+```
+
+```{r,echo=F}
+head(iris[,1:4])
+```
+
+
+- petal length and width - Länge und Breite der Blütenblätter
+
+- sepal length and width - Kelchlänge und -breite
+
+- [**Wikipedia Artikel zum IRIS Datensatz**](https://en.wikipedia.org/wiki/Iris_flower_data_set)
+
+
+<!--
+## Get a subset of the dataset 
+
+- These operators are good for restricting records
+
+```{r,echo=T}
+duration <- as.numeric(gpdat$bazq020a)
+head(gpdat[duration>20,])
+```
+-->
+
+
+
+<!--
+## Die fehlenden Werte rekodieren
+
+```{r}
+summary(duration)
+```
+
+```{r}
+gpdat$bazq020a[gpdat$bazq020a==-99] <- NA
+```
+
+- [**Quick-R zu fehlenden Werten**](http://www.statmethods.net/input/missingdata.html)
+
+- [**Fehlende Werte rekodieren**](http://uc-r.github.io/na_recode)
+
+
+
+## Eine einfache Funktion schreiben
+
+```{r}
+tail(duration,n=10)
+```
+
+```{r}
+transform_miss <- function(x){
+  x[x==-99] <- NA
+  return(x)
+}
+```
+
+```{r}
+duration <- transform_miss(duration)
+tail(duration,n=10)
+```
+
+
+## Aufgabe  - eine Funktion erweitern
+
+### Erweitert die Funktion so, 
+
+- dass auch die anderen Missingwerte als NA umkodiert werden
+- dass sie auch dann ihren Zweck erfüllt, wenn die Value Labels ausgegeben werden (Item nonresponse, Missing by filter, etc.).
+
+-->
+
+
+<!--
+## Restrict with the `tidyverse` package
+
+```{r}
+head(datf[duration>20,1:4])
+```
+
+- the same with a command from `tidyverse` package
+
+```{r,eval=F}
+library(tidyverse)
+filter(datf, duration>20)
+```
+
+```{r,echo=F,eval=F}
+library(tidyverse)
+head(filter(datf, duration>20))
+```
+
+
+```{r,eval=F,echo=F}
+install.packages("tidyverse")
+```
+-->
