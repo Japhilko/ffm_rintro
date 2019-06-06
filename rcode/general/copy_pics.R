@@ -47,13 +47,13 @@ if (sysInfo["nodename"]=="MAC14077"){
   new.folder <- "D:/Daten/GitHub/IntroR/buildingblocks/" 
   new.folder <- "D:/Daten/GitHub/IntroR/2019/slides/"
   new.folder <- "D:/Daten/GitHub/ffm_rintro/slides/"
-  path_wherepicslive <- "D:/Daten/GitHub/r_intro_gp18/slides/" 
   path_wherepicslive <- "D:/Daten/GitHub/geocourse/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/geohealth/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/RInterfaces/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/GeoData/2017/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/GeoData/2019/slides/"
   path_wherepicslive <- "D:/Daten/GitHub/IntroR/2019/slides/"
+  path_wherepicslive <- "D:/Daten/GitHub/r_intro_gp18/slides/" 
 }
 
 new.folder.fig <- paste0(new.folder,"/figure/")
@@ -63,7 +63,7 @@ new.folder.fig <- paste0(new.folder,"/figure/")
 
 setwd(new.folder)
 
-myfiles <- c("WarumR.Rmd","FreundGUI.Rmd","GrundlagenR.Rmd","Import.Rmd","Hilfe.Rmd")
+myfiles <- c("WarumR.Rmd","FreundGUI.Rmd","GrundlagenR.Rmd","Import.Rmd","Hilfe.Rmd","B2_Graphiken.Rmd")
 myfiles <- dir(new.folder) %>% grep(pattern = ".Rmd",value=T)
 
 

@@ -31,15 +31,26 @@ colnames(datb)
 
 dat <- datb[,"Stadtteil"]
 
+dat$Spielplaetze_100k <- datb[,16]
+
 dat$Spiel100K <- cut(datb[,16],3)
 levels(dat$Spiel100K) <- c("wenig","mittel","viele")
 
 dat$baugenehm12 <- cut(datb[,78],5)
 levels(dat$baugenehm12) <- c("sehr wenig","wenig","mittel","viele","sehr viele")
 
-write.csv2(dat,file=paste0(git_path,"/data/bauenwohnen_teil.csv"))
+dat$wohnungsbestand <- datb[,18]
+
+################
+# Daten anschauen
 
 colnames(datb)[16]
 colnames(datb)[78]
+
+################
+# Daten speichern
+
+
+write.csv2(dat,file=paste0(git_path,"/data/bauenwohnen_teil.csv"))
 
 save(dat,file=paste0(git_path,"/data/bauenwohnen_teil.RData"))
