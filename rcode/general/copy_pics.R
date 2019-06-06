@@ -28,8 +28,10 @@ sysInfo <- Sys.info()
 if (sysInfo["nodename"]=="MAL15037"){
   new.folder <- "D:/Eigene Dateien/Dokumente/GitHub/IntroR/buildingblocks"
   new.folder <- "D:/github/IntroR/2019/slides/"
+  new.folder <- "D:/Eigene Dateien/Dokumente/GitHub/ffm_rintro"
   path_wherepicslive <- "D:/GitHub/geocourse/slides/"
   path_wherepicslive <- "D:/Eigene Dateien/Dokumente/GitHub/r_intro_gp18/slides/"
+  path_wherepicslive <- "D:/github/IntroR/2019/slides/"
 }
 
 if (sysInfo["nodename"]=="SVMARDP07"){

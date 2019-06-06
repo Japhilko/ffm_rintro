@@ -1,0 +1,52 @@
+---
+title: "Advanced Import"
+author: "Jan-Philipp Kolb"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  beamer_presentation: 
+    colortheme: whale
+    theme: Warsaw
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Das Arbeitsverzeichnis II
+
+Auf diese Weise kann man herausfinden, in welchem Verzeichnis man sich befindet.
+
+```{r,eval=F}
+getwd()
+```
+
+So kann man das Arbeitsverzeichnis ändern:
+
+Man kann ein Objekt anlegen (bspw. `main.path`), in dem man den Pfad speichert:
+
+```{r,eval=F}
+main.path <- "C:/" # Example for Windows
+main.path <- "/users/Name/" # Example for Mac
+main.path <- "/home/user/" # Example for Linux
+```
+
+Und dann ändert man den Pfad mit `setwd()`.
+
+```{r,eval=F}
+setwd(main.path)
+```
+
+
+Unter Windows ist es wichtig, Slashs anstelle von Backslashes zu verwenden.
+
+
+## Arbeitsverzeichnis wechseln
+
+- Man kann auch die Tabulatortaste verwenden, um die automatische Vervollständigung zu erhalten.
+
+```{r}
+getwd()
+setwd("..")
+getwd()
+```

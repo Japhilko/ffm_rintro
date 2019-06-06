@@ -1,7 +1,7 @@
 ---
 title: "Hallo Welt"
 author: "Jan-Philipp Kolb"
-date: "5 Juni 2019"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
   beamer_presentation: 
     colortheme: whale
@@ -38,11 +38,9 @@ Normalerweise gibt es große Unterschiede bei Vorkenntnissen und Fähigkeiten - 
 
 - Die Foliensätze sind komplett auf github zu finden:
 
-https://github.com/Japhilko/IntroR/tree/master/2019
+https://github.com/Japhilko/ffm_rintro
 
 - Die Unterlagen werden dort auch verfügbar bleiben
-- Wer möchte, kann den Foliensatz ausgedruckt bekommen?
-
 
 ## Erwartungen und Anforderungen
 
@@ -119,23 +117,23 @@ Outstanding Graphs
 ![Aktivität Nutzer](http://spatial.ly/wp-content/uploads/2013/06/r_activity.png)
 -->
 
-
-## [R Nutzung ...](https://www.bloomberg.com/news/articles/2013-04-18/faq-reinhart-rogoff-and-the-excel-error-that-changed-history)
-
-
-### Weil [**andere Programme**](https://www.bloomberg.com/news/articles/2013-04-18/faq-reinhart-rogoff-and-the-excel-error-that-changed-history) Fehler provozieren können:
-
 <!--
 ### Wegen Fehleranfälligkeit anderer Programme
 ![](figure/RheinhartRogoff.PNG)
 -->
 
-- [Reinhart/Rogoff Paper](https://www.bloomberg.com/news/articles/2013-04-18/faq-reinhart-rogoff-and-the-excel-error-that-changed-history) - [**Star-Ökonom beklagt Hexenjagd nach Excel-Panne**](https://www.spiegel.de/wirtschaft/soziales/excel-panne-von-kenneth-rogoff-das-war-ein-massaker-a-929248.html)
-
-
 <!--
 Weil andere Programme große Fehler haben:
 -->
+
+<!--
+## [R Nutzung ...](https://www.bloomberg.com/news/articles/2013-04-18/faq-reinhart-rogoff-and-the-excel-error-that-changed-history)
+
+
+### Weil [**andere Programme**](https://www.bloomberg.com/news/articles/2013-04-18/faq-reinhart-rogoff-and-the-excel-error-that-changed-history) Fehler provozieren können:
+
+- [Reinhart/Rogoff Paper](https://www.bloomberg.com/news/articles/2013-04-18/faq-reinhart-rogoff-and-the-excel-error-that-changed-history) - [**Star-Ökonom beklagt Hexenjagd nach Excel-Panne**](https://www.spiegel.de/wirtschaft/soziales/excel-panne-von-kenneth-rogoff-das-war-ein-massaker-a-929248.html)
+
 
 - [**Probleme mit der Rundung bei Excel**](https://www.quora.com/What-are-some-horrible-bugs-in-MS-Excel)
 
@@ -144,15 +142,17 @@ Weil andere Programme große Fehler haben:
 
 - [**Probleme mit den Datumsangaben in Excel**](https://coffeehouse.dataone.org/2014/04/09/abandon-all-hope-ye-who-enter-dates-in-excel/)
 
-<!--
-![](figure/Abandon.PNG)
+- [**Probleme mit Excel bei der Nutzung in Bioinformatik Anwendung**](http://www.biomedcentral.com/1471-2105/5/80)
+
 -->
 
 
-- [**Probleme mit Excel bei der Nutzung in Bioinformatik Anwendung**](http://www.biomedcentral.com/1471-2105/5/80)
-
 <!--
 ![](figure/ExcelProblems.PNG)
+-->
+
+<!--
+![](figure/Abandon.PNG)
 -->
 
 
