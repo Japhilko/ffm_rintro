@@ -1,19 +1,18 @@
 ---
-title: "B2 - Graphics intro"
+title: "Einfach Graphiken erzeugen"
 author: "Jan-Philipp Kolb"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output:
-  beamer_presentation:
-    colortheme: beaver
-    fig_caption: no
-    fonttheme: structurebold
-    highlight: tango
-    theme: CambridgeUS
-  pdf_document:
-    toc: yes
-  html_document:
-    keep_md: yes
-  slidy_presentation:
+fontsize: 10pt
+output: 
+  beamer_presentation: 
+    colortheme: dolphin
+    fig_height: 3
+    fig_width: 5
+    fonttheme: structuresmallcapsserif
+    highlight: haddock
+    theme: Dresden
+  slidy_presentation: 
+    highlight: haddock
     keep_md: yes
 ---
 
@@ -75,6 +74,7 @@ https://cran.r-project.org/web/views/Graphics.html
 load("../data/bauenwohnen_teil.RData")
 ```
 
+![](figure/bauenwohnen_ffm.PNG)
 
 ## Histogramm - Die Funktion `hist()` 
 
@@ -85,7 +85,7 @@ Wir erstellen ein Histogramm der Variablen `Dauer`:
 ```
 
 
-```{r,eval=T}
+```{r,eval=T,fig.width=12, fig.height=5}
 hist(dat$Spielplaetze_100k)
 ```
 <!--
@@ -161,7 +161,7 @@ install.packages("colourpicker")
 
 ## Das `xlim` Argument
 
-```{r,eval=T}
+```{r,eval=T,fig.width=10, fig.height=4}
 hist(dat$Spielplaetze_100k,col="blue",
      main="Spielplätze je 100 Kinder 2012",ylab="Frequency", 
      xlab="Spielplätze",xlim=c(0,2))
@@ -237,17 +237,19 @@ barplot(tab_spiel,col=rgb(1,0,0,.3))
 
 
 ```{r}
-tab2dim <- table(dat$Spiel100K,dat$wohnraumversorgung_k)
+tab2dim <- table(dat$Spiel100K,dat$clust)
 ```
 
 
 ## Bedingter `barplot`
 
+
+<!--
 ```{r,eval=F}
 barplot(tab2dim,col=1:3)
 ```
 
-<!--
+
 ![](figure/condtable.PNG)
 -->
 
@@ -270,7 +272,7 @@ barplot(tab2dim,col=2:4,beside=T)
 ```
 
 
-```{r,eval=T}
+```{r,eval=T,fig.width=12, fig.height=5}
 boxplot(dat$wohnungsbestand,horizontal=TRUE)
 ```
 
@@ -284,8 +286,8 @@ boxplot(dat$wohnungsbestand,horizontal=TRUE)
 - Dazu muss ein sogenanntes Formelobjekt an die Funktion `boxplot()` übergeben werden.
 - Die bedingte Variable befindet sich auf der rechten Seite einer Tilde.
 
-```{r,eval=T}
-boxplot(dat$duration~sex,horizontal=TRUE)
+```{r,eval=T,fig.width=12, fig.height=5}
+boxplot(wohnungsbestand~clust,data=dat,horizontal=TRUE)
 ```
 
 <!--
@@ -304,9 +306,9 @@ boxplot(dat$duration~sex,horizontal=TRUE)
 install.packages("vioplot")
 ```
 
-```{r,eval=T}
+```{r,eval=T,fig.width=12, fig.height=5}
 library(vioplot)
-vioplot(na.omit(dat$duration))
+vioplot(na.omit(dat$wohnungsbestand),col="royalblue")
 ```
 
 <!--
@@ -314,7 +316,7 @@ vioplot(na.omit(dat$duration))
 -->
 
 
-```{r,message=F,eval=F,echo=F}
+```{r,message=F,eval=F,echo=F,fig.width=12, fig.height=5}
 library(vioplot)
 plot(x, y, xlim=c(-5,5), ylim=c(-5,5))
 vioplot(x, col="tomato", horizontal=TRUE, at=-4, 
@@ -333,8 +335,8 @@ install.packages("beanplot")
 ```{r}
 library(beanplot)
 par(mfrow = c(1,2))
-boxplot(dat$duration~dat$a11d054a,data=dat,col="blue")
-beanplot(dat$duration~dat$a11d054a,data=dat,col="orange")
+boxplot(dat$wohnungsbestand~dat$clust,data=dat,col="blue")
+beanplot(dat$wohnungsbestand~dat$clust,data=dat,col="orange")
 ```
 
 ## Bedingte, bi- und multivariate Graphiken - Scatterplots
@@ -353,14 +355,14 @@ install.packages("mlmRev")
 ```
 
 ```{r,eval=T}
-plot(runif(100),rnorm(100))
+plot(dat$wohnungsbestand,dat$bautaet)
 ```
 
 <!--
 ![](figure/scatterplot.PNG)
 -->
 
-## B2A Übung - einfache Grafiken
+## Übung - Balkendiagramm `VADeaths`
 
 - Laden Sie den Datensatz `VADeaths` und erstellen Sie die folgende Darstellung:
 
@@ -423,7 +425,7 @@ kable(c97dat)
 
 ## Histogramm mit `lattice`
 
-```{r,message=F}
+```{r,message=F,fig.width=12, fig.height=5}
 library("lattice")
 histogram(~ gcsescore, data = Chem97)
 ```
@@ -432,13 +434,13 @@ histogram(~ gcsescore, data = Chem97)
 
 ## Mehr Histogramme mit `lattice`
 
-```{r}
+```{r,fig.width=12, fig.height=5}
 histogram(~ gcsescore | score,data = Chem97)
 ```
 
 ## Die Dichte plotten mit einer Legende
 
-```{r}
+```{r,fig.width=12, fig.height=5}
 densityplot(~ gcsescore | score, Chem97, 
 	groups=gender,auto.key=TRUE)
 ```
@@ -447,11 +449,11 @@ densityplot(~ gcsescore | score, Chem97,
 
 ## Einen Boxplot mit `lattice` erzeugen
 
-```{r,echo=T,eval=T}
+```{r,echo=T,eval=T,fig.width=12, fig.height=5}
 Chem97$score <- as.factor(Chem97$score)
 ```
 
-```{r}
+```{r,fig.width=12, fig.height=5}
 bwplot(score ~ gcsescore | gender, Chem97)
 ```
 
@@ -584,29 +586,15 @@ levelplot(table(BankWages$education,BankWages$job),
 ![](figure/levelplotBankWages.PNG)
 -->
 
-## Nutzung sozialer Netzwerke: Facebook (bbzc041a)
-
-- 1 - Nein, bin kein Mitglied; 2 - Ja, nutze es aber nie; 3 - Ja, nutze es manchmal; 4 - Ja, nutze es oft
+## `levelplot` 
 
 ```{r}
-facebook <- transform_miss(datf$bbzc041a)
-table(facebook)
-```
-
-## Nutzung sozialer Netzwerke: Twitter (bbzc042a)
-
-- 1 - Nein, bin kein Mitglied; 2 - Ja, nutze es aber nie; 3 - Ja, nutze es manchmal; 4 - Ja, nutze es oft
-
-```{r}
-twitter <- as.character(transform_miss(datf$bbzc042a))
-table(twitter)
+tab2dim2 <- table(dat$clust,dat$Spiel100K)
 ```
 
 
-## `levelplot` mit GESIS Panel Daten
-
-```{r,message=F,eval=GESIS}
-levelplot(table(facebook,twitter),
+```{r,message=F,fig.width=12, fig.height=5}
+levelplot(tab2dim2,
 col.regions=colorRampPalette(c("blue","white","red")))
 ```
 
@@ -614,60 +602,25 @@ col.regions=colorRampPalette(c("blue","white","red")))
 ![](figure/levelplot_twitterfacebook.PNG)
 -->
 
-## Internet Nutzung (GESIS Panel)
 
-- a11c035a: Häufigkeit private Internetnutzung: Tischcomputer
-
-```{r}
-internet <- transform_miss(datf$a11c035a)
-```
-
-
-- a11c037a: Häufigkeit private Internetnutzung: Smartphone
-
-```{r}
-smartphone <- transform_miss(datf$a11c037a)
-```
-
-1 - Mehrmals täglich; 2 - Etwa einmal täglich; 3 - Mehrmals die Woche; 4 - Etwa einmal die Woche; 5 - Seltener; 6 - Nie; 98 - Weiß nicht
-
-
-```{r}
-tab2 <- table(internet,smartphone)
-```
 
 ## Zusammenhang - kategoriale Variablen
 
 
-```{r,eval=GESIS}
-mosaicplot(tab2, color = TRUE,main="")
+```{r}
+mosaicplot(tab2dim2, color = TRUE,main="")
 ```
 
 <!--
 ![](figure/mosaicplot_internet.PNG)
 -->
 
-<!--
-## Making the plot clearer
+
+
+## Einfärbung nach Residuen:
 
 ```{r}
-table(dat$a11c036a)
-
-missings<-c("Item nonresponse","Missing by filter","Weiß nicht")
-dat$a11c034a[dat$a11c034a %in% missings] <- NA
-dat$a11c036a[dat$a11c036a %in% missings] <- NA
-
-table(dat$a11c034a)
-dat$a11c034a <- as.character(dat$a11c034a)
-dat$a11c036a <- as.character(dat$a11c036a)
-```
--->
-
-
-## Die Flächen werden anhand der Residuen eingefärbt:
-
-```{r,eval=GESIS}
-mosaicplot(tab2, main=F,shade = TRUE)
+mosaicplot(tab2dim2, main="",shade = TRUE)
 ```
 
 <!--
@@ -682,8 +635,8 @@ $$
 
 ## `parallelplot()`
 
-```{r}
-parallelplot(~iris[,1:4] | Species, iris)
+```{r,fig.width=12, fig.height=8}
+parallelplot(~iris[,1:4] | Species, iris,layout=c(3,1))
 ```
 
 ## Das `ggplot2` Paket
@@ -712,7 +665,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) +
 ![](figure/ggplot2ex.PNG)
 -->
 
-## Einige schöne Rstudio Addins
+## Einige Rstudio Addins
 
 - Eine `ggplot` Grafik muss im Quellcode markiert werden, um die folgenden Addins zu verwenden
 
@@ -721,14 +674,14 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) +
 install.packages("ggThemeAssist")
 ```
 
-![](figure/ggThemeAssist.PNG)
+![](figure/ggThemeAssist.PNG){height=60%}
 
 
 ```{r,eval=F}
 install.packages('ggedit')
 ```
 
-![](figure/ggedit.PNG)
+![](figure/ggedit.PNG){height=60%}
 
 ## RStudio Addin zum Erzeugen von `ggplot2` Graphiken
 
