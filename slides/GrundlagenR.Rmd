@@ -2,19 +2,17 @@
 title: "Grundlagen R"
 author: "Jan-Philipp Kolb"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output:
+fontsize: 10pt
+output: 
   beamer_presentation: 
-    colortheme: crane
+    colortheme: dolphin
     fig_height: 3
     fig_width: 5
     fonttheme: structuresmallcapsserif
-    highlight: tango
-    theme: Warsaw
-  pdf_document: 
-    keep_tex: yes
-    toc: yes
+    highlight: haddock
+    theme: Dresden
   slidy_presentation: 
-    css: mycss.css
+    highlight: haddock
     keep_md: yes
 ---
 
@@ -87,7 +85,9 @@ sd(b)
 var(b)
 ```
 
-## Funktionen mit einem Argument
+## Argumente
+
+### Funktionen mit einem Argument
 
 ```{r}
 mean(b)
@@ -95,12 +95,58 @@ median(b)
 ```
 
 
-## Funktionen mit mehr Argumenten
+### Funktionen mit mehr Argumenten
 
 ```{r}
 quantile(b,.9)
 sample(b,1) 
 ```
+
+
+## Zufallszahlen ziehen
+
+```{r}
+n <- 100
+# x und y sind Vektoren
+x <- runif(n)
+y <- rnorm(n)
+```
+
+
+```{r}
+str(x)
+```
+
+### Indizieren von Vektoren
+
+```{r}
+x[1]
+x[1:4]
+x[97:100]
+```
+
+
+## Buchstaben
+
+```{r}
+a <- letters
+length(letters)
+a[1:4]
+```
+
+### Variablentyp `character` 
+
+```{r}
+str(a)
+```
+
+
+- Hier kann man bspw keinen Mittelwert berechnen
+
+```{r,warning=T}
+mean(a)
+```
+
 
 
 ## [Übersicht Befehle](http://cran.r-project.org/doc/manuals/R-intro.html)
