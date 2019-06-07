@@ -459,7 +459,7 @@ bwplot(score ~ gcsescore | gender, Chem97)
 
 ## Bedingte Boxplots mit `lattice` erzeugen
 
-```{r}
+```{r,fig.width=12, fig.height=5}
 bwplot(gcsescore ~ gender | score, Chem97,
  layout = c(6, 1))
 ```
@@ -486,14 +486,14 @@ barchart(gcsescore ~ lea | school, data = Chem97,groups = gender, stack = TRUE,
 
 ## Ein `densityplot`
 
-```{r}
+```{r,fig.width=12, fig.height=5}
 densityplot(~height|voice.part,data=singer,layout = c(2,4),
             xlab = "Height (inches)",bw = 5)
 ```
 
 ## Bivariate Plots - Quantile-Quantile Plot
 
-```{r}
+```{r,fig.width=12, fig.height=5}
 qq(gender ~ gcsescore | score, Chem97)
 ```
 
@@ -505,7 +505,7 @@ xyplot(Sepal.Length + Sepal.Width ~ Petal.Length + Petal.Width
        auto.key = list(x = .6, y = .7, corner = c(0, 0)))
 ```
 
-```{r,eval=T}
+```{r,eval=T,fig.width=12, fig.height=5}
 xyplot(Sepal.Length+Sepal.Width~Petal.Length+Petal.Width 
        | Species,data = iris, auto.key = T)
 ```
@@ -516,19 +516,17 @@ xyplot(Sepal.Length+Sepal.Width~Petal.Length+Petal.Width
 
 ## Zusammenhang zwischen Variablen - `pairs` Plot
 
-```{r}
+```{r,fig.width=12, fig.height=5}
 pairs(iris[,1:4])
 ```
 
 
 ## Den `pairs`Plot erweitert
 
-```{r,eval=T}
+```{r,eval=T,fig.width=12, fig.height=5}
 library("psych")
-pairs.panels(iris[,1:4],
-             bg=c("red","yellow","blue")[iris$Species],
+pairs.panels(iris[,1:4],bg=c("red","yellow","blue")[iris$Species],
              pch=21,main="")
-
 ```
 
 <!--
@@ -538,7 +536,7 @@ pairs.panels(iris[,1:4],
 
 ## Multivariate Plots - `splom`
 
-```{r}
+```{r,fig.width=12, fig.height=5}
 splom(~iris[,1:4], groups = Species, data = iris)
 ```
 

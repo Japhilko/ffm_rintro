@@ -11,7 +11,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](slides/Intro_Datenanalyse1.md) verfügbar. Das pdf und die Browser Version für die einzelnen Teile sind ebenfalls in diesem Github Ordner enthalten. Der rcode in den Folien lässt sich mit den Dateien im [rcode Ordner](https://github.com/Japhilko/IntroR/tree/master/2019/rcode) nachverfolgen. 
+Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](https://github.com/Japhilko/ffm_rintro/tree/master/slides) verfügbar. Das pdf und die Browser Version für die einzelnen Teile sind ebenfalls in diesem Github Ordner enthalten. Der rcode in den Folien lässt sich mit den Dateien im [rcode Ordner](https://github.com/Japhilko/ffm_rintro/tree/master/rcode) nachverfolgen. 
 
 ## Einführung und Vorbereitung
 
@@ -47,8 +47,6 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](slides/Intro_Datenan
 
 ## Ein erster Eindruck – Was uns die Daten sagen
 
-- Das GESIS Panel ([pdf](slides/GESISPanel.pdf))
-
 <!--
 - Indizieren
 ([Browser](slides/datenanalyse_ffm.Rmd)| [pdf](slides/datenanalyse_ffm) |  [rcode](https://github.com/Japhilko/IntroR/blob/master/2019/rcode/datenanalyse_ffm.R))
@@ -65,14 +63,10 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](slides/Intro_Datenan
 
     - Aufgabe - Barplot ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/tutorial/Aufgabe_Barplot.md))
     
-## Noch mehr Grafiken - multidimensional
 
-- Zusammenhang ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/Multidimensional.md) | [pdf](slides/Multidimensional.pdf) | [rcode](rcode/Multidimensional.R))
-
-- Das lattice Paket ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/LatticePaket.md) | [pdf](slides/LatticePaket.pdf) | [rcode](rcode/LatticePaket.R))
-
+<!--
     - Aufgabe - OECD Datensatz ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/Aufgabe_OECDdata.md))
-    
+-->    
     
 ## Regression – Überblick der Methoden in R
 
@@ -89,8 +83,9 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](slides/Intro_Datenan
 
 - Exkurs: Datenquellen ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/Datenquellen.md))
 
-
+<!--
 - Faktoren in R ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Faktoren.Rmd) | [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/Faktoren.pdf) | [rcode](rcode/Faktoren.R))
+-->
 
 - Grafiken mit ggplot ([Browser](https://github.com/Japhilko/IntroR/blob/master/2017/slides/ggplot2.Rmd) | [pdf](https://github.com/Japhilko/IntroR/blob/master/2017/slides/ggplot2.pdf) | [rcode](rcode/ggplot2.R))
 
