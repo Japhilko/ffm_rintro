@@ -247,6 +247,11 @@ devtools::install_github("lbusett/insert_table")
 ![](figure/inserttable.PNG){ height=50% }
 
 
+## Offene Daten der Stadt Frankfurt am Main
+
+![](figure/offeneDaten_ffm.PNG)
+
+
 ##  Übung - Importieren von Daten
 
 - Importiere die Daten des österreichischen Mikrozensus und verschaffe Dir einen ersten Überblick über die Daten.
