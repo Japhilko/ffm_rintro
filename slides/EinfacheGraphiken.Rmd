@@ -285,7 +285,7 @@ boxplot(dat$wohnungsbestand,horizontal=TRUE)
 - Die bedingte Variable befindet sich auf der rechten Seite einer Tilde.
 
 ```{r,eval=T}
-boxplot(dat$duration~sex,horizontal=TRUE)
+boxplot(dat$wohnungsbestand~dat$Spiel100K,horizontal=TRUE)
 ```
 
 <!--

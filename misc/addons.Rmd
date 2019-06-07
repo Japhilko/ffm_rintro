@@ -186,3 +186,107 @@ head(filter(datf, duration>20))
 install.packages("tidyverse")
 ```
 -->
+
+
+
+## GESIS Panel Daten importieren
+
+- Zum importieren nutzen wir die Funktion `read.dta13` aus dem Paket `readstata13`
+
+```{r,echo=F,eval=GESIS}
+dat <- readstata13::read.dta13("D:/Daten/GitLab/IntroDataAnalysis/data/ZA5666_v1-0-0_Stata14.dta")
+```
+
+```{r,echo=F,eval=athome}
+dat <- readstata13::read.dta13("D:/gitlab/IntroDataAnalysis/data/ZA5666_v1-0-0_Stata14.dta")
+```
+
+
+```{r,echo=F,eval=F}
+dat <- readstata13::read.dta13("../data/ZA5666_v1-0-0_Stata14.dta")
+dat$duration <- as.numeric(dat$bfzq020a)
+dat$duration[dat$bfzq020a %in% c(-77,-22,-33,-77.-99)] <- NA
+```
+
+```{r,eval=F}
+dat <- readstata13::read.dta13(
+  "../data/ZA5666_v1-0-0_Stata14.dta")
+```
+
+```{r,eval=GESIS,echo=F}
+datf <- readstata13::read.dta13("../data/ZA5666_v1-0-0_Stata14.dta",
+                                convert.factors = F)
+```
+
+```{r,echo=F,eval=athome}
+datf <- readstata13::read.dta13("D:/gitlab/IntroDataAnalysis/data/ZA5666_v1-0-0_Stata14.dta",
+                                convert.factors = F)
+```
+
+
+```{r,eval=GESIS,echo=F}
+datf <- readstata13::read.dta13("D:/Daten/GitLab/IntroDataAnalysis/data/ZA5666_v1-0-0_Stata14.dta",convert.factors = F)
+```
+
+
+<!--
+## Datensatz
+
+```{r,echo=F,eval=F}
+install.packages("mlmRev")
+```
+
+
+```{r,message=F}
+library(mlmRev)
+data(Chem97)
+```
+
+- [lea] Local Education Authority - a factor
+- [school] School identifier - a factor
+- [student] Student identifier - a factor
+- [score] Point score on A-level Chemistry in 1997
+- [gender] Student's gender
+- [age] Age in month, centred at 222 months or 18.5 years
+- [gcsescore] Average GCSE score of individual.
+- [gcsecnt] Average GCSE score of individual, centered at mean.
+-->
+
+
+
+## Geschätzte Dauer (bfzq020a)
+
+### Wie lange haben Sie gebraucht, um den Fragebogen auszufüllen?
+
+```{r,eval=F}
+dat <- readstata13::read.dta13("ZA5666_v1-0-0_Stata14.dta")
+summary(dat$duration)
+```
+
+```{r}
+dat$duration <- as.numeric(dat$bfzq020a)
+```
+
+
+```{r,echo=F}
+summary(dat$duration)
+```
+
+
+## Fehlende Werte rekodieren
+
+```{r}
+transform_miss <- function(x){
+  x[x%in%c(-11,-22,-33,-44,-55,-66,-77,-88,-99,-111)] <- NA
+  x[x%in%c("Item nonresponse","Missing by filter",
+           "Not reached","Unit nonresponse",
+           "Not in panel")] <- NA
+  return(x)
+}
+```
+
+```{r}
+Inetfriends <- as.character(transform_miss(dat$bbzc024a))
+(tab2dim <- table(Inetfriends,sex))
+```
+

@@ -41,6 +41,12 @@ levels(dat$baugenehm12) <- c("sehr wenig","wenig","mittel","viele","sehr viele")
 
 dat$wohnungsbestand <- datb[,18]
 
+
+dat$wohnraumversorgung_k <- cut(datb[,56],3)
+levels(dat$wohnraumversorgung_k) <- c("wenig","mittel","viele")
+
+dat <- dat[dat$Stadtteil!="Frankfurt am Main",]
+
 ################
 # Daten anschauen
 
