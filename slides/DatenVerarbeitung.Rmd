@@ -1,19 +1,19 @@
 ---
-title: "Was uns die Daten sagen - erste Schritte der Daten Bearbeitung und Analyse"
+title: "Einführung in R - Erste Schritte der Daten Verarbeitung und Analyse"
 author: "Jan-Philipp Kolb"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output:
-  beamer_presentation:
-    colortheme: beaver
+fontsize: 10pt
+output: 
+  beamer_presentation: 
     fig_caption: no
-    fonttheme: structurebold
-    highlight: tango
-    theme: CambridgeUS
-  pdf_document:
-    toc: yes
-  html_document:
-    keep_md: yes
-  slidy_presentation:
+    fig_height: 3
+    fig_width: 5
+    fonttheme: structuresmallcapsserif
+    highlight: zenburn
+    colortheme: whale
+    theme: Warsaw
+  slidy_presentation: 
+    highlight: haddock
     keep_md: yes
 ---
 
@@ -47,10 +47,11 @@ dats <- dats[-which(dats$Part=="Break"),]
 kable(dats,row.names = F)
 ```
 
+### Was uns die Daten sagen.
+
 - Wie bekommt man einen Überblick über die Daten
 - Indizieren von Vektoren, Datensätzen und Listen
 - Wie geht man mit fehlenden Werten um
-- Schleifen und Funktionen
 - Zusammenhänge zwischen Variablen
 
 ## `data.frame`'s
@@ -402,31 +403,6 @@ fct_count(wbkat)
 
 
 
-## [**Schleifen in R**](https://www.datacamp.com/community/tutorials/tutorial-on-loops-in-r)
-
-- Der Befehl `for()` kennzeichnet den Start einer Schleife 
-- in Klammern, haben wir einen Index und die Anzahl der Läufe (in diesem Fall läuft die Schleife von 1 bis 4).
-- in den geschweiften Klammern `{}` ist angegeben, was bei einer Iteration passiert.
-
-```{r,eval=T}
-for (i in 1:4){
-  cat(i, "\n")
-}
-```
-
-## Schleifen - die Ergebnisse behalten
-
-- Wir können die Ergebnisse in einem Objekt speichern
-- dieses kann bspw. ein Vektor oder eine Liste sein. 
-
-```{r,eval=F}
-erg <- list()
-
-for (i in 1:ncol(dat)){
-  erg[[i]] <- summary(dat)
-  cat(i, "\n")
-}
-```
 
 
 ## Die `apply` Familie

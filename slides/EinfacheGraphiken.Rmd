@@ -1,16 +1,17 @@
 ---
-title: "Einfach Graphiken erzeugen"
+title: "Einführung in R - Einfach Graphiken"
 author: "Jan-Philipp Kolb"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 fontsize: 10pt
 output: 
   beamer_presentation: 
-    colortheme: dolphin
+    fig_caption: no
     fig_height: 3
     fig_width: 5
     fonttheme: structuresmallcapsserif
-    highlight: haddock
-    theme: Dresden
+    highlight: zenburn
+    colortheme: whale
+    theme: Warsaw
   slidy_presentation: 
     highlight: haddock
     keep_md: yes
@@ -286,16 +287,15 @@ boxplot(dat$wohnungsbestand,horizontal=TRUE)
 - Dazu muss ein sogenanntes Formelobjekt an die Funktion `boxplot()` übergeben werden.
 - Die bedingte Variable befindet sich auf der rechten Seite einer Tilde.
 
-<<<<<<< HEAD
-```{r,eval=T}
-boxplot(dat$wohnungsbestand~dat$Spiel100K,horizontal=TRUE)
-=======
+
 ```{r,eval=T,fig.width=12, fig.height=5}
 boxplot(wohnungsbestand~clust,data=dat,horizontal=TRUE)
->>>>>>> ee50037238e611f0d1b244af2fbebc5ffebe7971
 ```
 
 <!--
+boxplot(dat$wohnungsbestand~dat$Spiel100K,horizontal=TRUE)
+
+
 ![](figure/boxplot_sex.PNG)
 -->
 

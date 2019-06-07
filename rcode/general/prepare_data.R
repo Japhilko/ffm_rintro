@@ -48,14 +48,14 @@ levels(dat$baugenehm12) <- c("sehr wenig","wenig","mittel","viele","sehr viele")
 dat$wohnungsbestand <- datb[,18]
 
 
-<<<<<<< HEAD
 dat$wohnraumversorgung_k <- cut(datb[,56],3)
 levels(dat$wohnraumversorgung_k) <- c("wenig","mittel","viele")
 
+# dat$wohnraumversorgung_k <- datb$Wohnraumversorgung.Anzahl.der.Einwohnerinnen.und.Einwohner.je.Wohnung.2011
+
+
 dat <- dat[dat$Stadtteil!="Frankfurt am Main",]
-=======
-dat$wohnraumversorgung_k <- datb$Wohnraumversorgung.Anzahl.der.Einwohnerinnen.und.Einwohner.je.Wohnung.2011
->>>>>>> ee50037238e611f0d1b244af2fbebc5ffebe7971
+
 
 ################
 # Daten anschauen
@@ -80,6 +80,9 @@ dat$clust <- clust$cluster
 # txt Datensatz erzeugen
 
 datt <- data.frame(datb$Stadtteil)
+dat_sn <- datt
+colnames(dat_sn) <- "Stadtteil"
+
 datt$Stadtteil=as.character(datt$Stadtteil)
 
 list_gc <- list()
@@ -95,7 +98,6 @@ save(list_gc,file=paste0(data_path,"/list_gc.RData"))
 
 datt_gc <- cbind(datt,do.call(rbind,lapply(list_gc,function(x)x$coords)))
 
-
 write.table(datt_gc,file=paste0(data_path,"/datt_gc_ffm.txt"))
 
 
@@ -103,11 +105,13 @@ write.table(datt_gc,file=paste0(data_path,"/datt_gc_ffm.txt"))
 # Daten speichern
 
 dat <- data.frame(dat)
+dat$Stadtteil <- as.character(dat$Stadtteil)
 
 write.csv2(dat,file=paste0(git_path,"/data/bauenwohnen_teil.csv"))
 
 save(dat,file=paste0(git_path,"/data/bauenwohnen_teil.RData"))
 
+save(dat_sn,file=paste0(git_path,"/data/dat_sn.RData"))
 
 #####################
 # XML 

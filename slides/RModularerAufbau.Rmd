@@ -1,21 +1,19 @@
 ---
-title: "Einführung in die Datenanalyse mit R - Modularer Aufbau von R"
+title: "Einführung in R - Modularer Aufbau von R"
 author: "Jan-Philipp Kolb"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
-output:
+fontsize: 10pt
+output: 
   beamer_presentation: 
-    colortheme: dolphin
-    fonttheme: structuresmallcapsserif
     fig_caption: no
     fig_height: 3
     fig_width: 5
+    fonttheme: structuresmallcapsserif
     highlight: zenburn
-    theme: Dresden
-  pdf_document: 
-    keep_tex: yes
-    toc: yes
+    colortheme: whale
+    theme: Warsaw
   slidy_presentation: 
-    css: mycss.css
+    highlight: haddock
     keep_md: yes
 ---
 
@@ -124,6 +122,20 @@ install_github("hadley/ggplot2")
 ```
 
 
+## Rcommander
+
+```{r,eval=F}
+install.packages("Rcmdr")
+```
+
+```{r}
+library(Rcmdr)
+```
+
+<!--
+swirl
+-->
+
 
 ## Wie bekomme ich einen Überblick?
 
@@ -153,3 +165,11 @@ install.views("Bayesian")
 
 ![](figure/CRANtaskViews.PNG)
 
+## Aufgabe - Zusatzpakete
+
+Gehe bspw. auf <https://cran.r-project.org/> (oder auf andere Seiten) und suche nach Paketen,...
+
+-  um Daten zu visualisieren
+-  um Daten zu manipulieren 
+- für die Modellierung (bspw. Regressionen)
+-  um Ergebnisse zu berichten (bspw. in einem pdf oder auf einer Website)

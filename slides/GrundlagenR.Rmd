@@ -5,12 +5,13 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 fontsize: 10pt
 output: 
   beamer_presentation: 
-    colortheme: dolphin
+    fig_caption: no
     fig_height: 3
     fig_width: 5
     fonttheme: structuresmallcapsserif
-    highlight: haddock
-    theme: Dresden
+    highlight: zenburn
+    colortheme: whale
+    theme: Warsaw
   slidy_presentation: 
     highlight: haddock
     keep_md: yes
@@ -145,6 +146,57 @@ str(a)
 
 ```{r,warning=T}
 mean(a)
+```
+
+
+## Aufgabe - Zuweisungen und Funktionen
+
+Erzeugen Sie einen Vektor b mit den Zahlen von 1 bis 5 und berechnen Sie...
+
+
+1. den Mittelwert
+
+2. die Varianz
+
+3. die Standardabweichung
+
+4. die quadratische Wurzel aus dem Mittelwert
+
+
+## Kommentierung / Style Guide
+
+
+### Kommentierung
+
+- Man kann mit einem Hashtag Kommentare einfügen.
+- Es macht Sinn am Anfang kurz einen Header einzufügen, bspw. mit folgenden Informationen: Autor, Thema, Erstellungsdatum,...
+- Kommentarzeichen, die mehrere Zeilen als Kommentare kennzeichnen (siehe Stata) gibt es nicht. 
+
+
+### [**Google Style Guide**](https://google.github.io/styleguide/Rguide.xml)
+
+- Enthält bspw. Richtlinien zur Benennung von Objekten
+
+## `data.frame`s
+
+```{r}
+ab <- data.frame(a,x=x[1:26])
+head(ab)
+str(ab)
+```
+
+## Matrizen
+
+- Eine Matrix ist invertierbar - Allerdings haben alle Variablen gleichen Typ. 
+
+```{r}
+xy <- rbind(x[1:4],y[1:4])
+str(xy)
+xy
+```
+
+```{r}
+t(xy)
 ```
 
 

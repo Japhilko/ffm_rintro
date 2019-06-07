@@ -1,0 +1,161 @@
+---
+title: "Einführung in R - Schleifen und Funktionen"
+author: "Jan-Philipp Kolb"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+fontsize: 10pt
+output: 
+  beamer_presentation: 
+    fig_caption: no
+    fig_height: 3
+    fig_width: 5
+    fonttheme: structuresmallcapsserif
+    highlight: zenburn
+    colortheme: whale
+    theme: Warsaw
+  slidy_presentation: 
+    highlight: haddock
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+```
+
+## Inhalt dieses Beispiels
+
+- Im Prinzip sollte man immer versuchen Aufgaben zu vektorisieren (`apply` Befehlsfamilie).
+- Allerdings können Schleifen auch sehr nützlich sein. 
+- Um dies zu zeigen, möchte ich etwas länger ausholen...
+
+### Arbeitsschritte
+
+- Beispieldaten laden
+- Geokodierung durchführen
+- Schleifen und Funktionen
+
+## Daten laden
+
+```{r}
+load("../data/bauenwohnen_teil.RData")
+```
+
+```{r}
+head(dat$Stadtteil)
+```
+
+## Eine Spalte hinzufügen
+
+```{r}
+(dat$stadtteil_l <- paste("Frankfurt",dat$Stadtteil))
+```
+
+## Geokodieren
+
+```{r}
+library(tmaptools)
+```
+
+```{r,eval=F}
+(gc1 <- geocode_OSM("Frankfurt Altstadt"))
+```
+
+```
+$`query`
+[1] "Frankfurt Altstadt"
+
+$coords
+        x         y 
+ 8.682936 50.111045 
+
+$bbox
+     xmin      ymin      xmax      ymax 
+ 8.674523 50.106129  8.688171 50.114872 
+```
+
+## Mehr Informationen
+
+```{r,eval=F}
+gc2 <- geocode_OSM("Frankfurt Altstadt",details = T)
+```
+
+```{r,eval=F,echo=F}
+save(gc2,file="../data/ffm_gc2.RData")
+```
+
+```{r,echo=F}
+load("../data/ffm_gc2.RData")
+```
+
+```{r}
+names(gc2)
+```
+
+
+## [**Schleifen in R**](https://www.datacamp.com/community/tutorials/tutorial-on-loops-in-r)
+
+- Der Befehl `for()` kennzeichnet den Start einer Schleife 
+- in Klammern, haben wir einen Index und die Anzahl der Läufe (in diesem Fall läuft die Schleife von 1 bis 4).
+- in den geschweiften Klammern `{}` ist angegeben, was bei einer Iteration passiert.
+
+```{r,eval=T}
+for (i in 1:4){
+  cat(i, "\n")
+}
+```
+
+## Schleifen - die Ergebnisse behalten
+
+- Wir können die Ergebnisse in einem Objekt speichern
+- dieses kann bspw. ein Vektor oder eine Liste sein. 
+
+```{r,eval=F}
+erg <- list()
+
+for (i in 1:ncol(dat)){
+  erg[[i]] <- summary(dat)
+  cat(i, "\n")
+}
+```
+
+
+
+```{r,eval=F,echo=F}
+## Funktionen in R
+getgeocode <- function(gc_object){
+  x <- gc_object$coords
+  return(x)
+}
+```
+
+
+## Eine Schleife um die geokodierten Ergebnisse abzugreifen
+
+- Die Geokdoierung wird durchgeführt und das Ergebnis an der entsprechenden Stelle in der Liste `erg` gespeichert. 
+
+```{r,eval=F}
+erg <- list()
+for(i in 1:nrow(dat)){
+  erg[[i]] <- geocode_OSM(dat$stadtteil_l[i])
+}
+```
+
+```{r,eval=F,echo=F}
+save(erg,file="../data/gc_list_stadtteile_ffm.RData")
+```
+
+```{r,echo=F}
+load("../data/gc_list_stadtteile_ffm.RData")
+```
+
+```{r}
+erg2 <- lapply(erg,function(x)x$coords)
+df_gc1 <- do.call(rbind,erg2)
+df_gc <- data.frame(dat$Stadtteil,df_gc1)
+```
+
+## Das resultierende `data.frame`
+
+```{r}
+head(df_gc)
+```
+

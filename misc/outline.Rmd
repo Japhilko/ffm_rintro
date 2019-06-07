@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Das Konzept von R und Programmierung mit R
 -         Die Programmiersprache, Objekte und Objektorientierung, Wertezuweisung, Funktionen 
 -         Kommentierung zur Dokumentation der Programmierung 
--         Variablentypen und ihre Eigenschaften (Vektoren, Data Frames, Listen…) 
+-         Variablentypen und ihre Eigenschaften (Vektoren, Data Frames, Listen...) 
  
 ## Anwendungen  
 -         Datenimport, -export unterschiedlicher Dateiformate (.xls, .csv, .txt) – mit Übung
@@ -27,3 +27,23 @@ knitr::opts_chunk$set(echo = TRUE)
 -         Auswertungen, Statistische Kennzahlen  – mit Übung
 -         Beispiele für einfache Uni-, Bivariater Grafiken – mit Übung
  
+
+## Kürzeres Outline
+
+-         Was ist R?
+-         Generelle Einführung in den Aufbau und die Funktionsweise der Software
+-         Einführung in die Programmiersprache
+-         Daten einlesen
+-         Daten überarbeiten / Tabellen berechnen
+-         Daten ausgeben
+-         Kleine Beispiele deskriptiver Statistik 
+
+
+## 
+
+- Einführung in die Programmiersprache R
+- Modularer Aufbau von R - Funktionen und Pakete
+- Import und Export von Daten
+- Datenverarbeitung und deskriptive Analyse
+- Das Erstellen von Graphiken
+- Regression mit R
