@@ -10,7 +10,7 @@ output:
     fig_height: 3
     fig_width: 5
     highlight: zenburn
-    theme: Warsaw
+    theme: Dresden
   pdf_document: 
     keep_tex: yes
     toc: yes
@@ -60,6 +60,16 @@ Aus den folgenden Gründen:
 - Ich nutze [Rstudio!](https://www.rstudio.com/)
 
 ![rstudio](figure/0_overall.jpg)
+
+## Rcommander
+
+```{r,eval=F}
+install.packages("Rcmdr")
+```
+
+```{r}
+library(Rcmdr)
+```
 
 
 ## Links zu Rstudio

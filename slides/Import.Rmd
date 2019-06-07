@@ -55,6 +55,18 @@ knitr::opts_chunk$set(echo = TRUE,message=F,warning=F)
 
 ![](figure/codepreview.PNG)
 
+
+## `.txt` importieren
+
+```{r}
+dat_gc <- read.table("../data/datt_gc_ffm.txt")
+```
+
+```{r}
+head(dat_gc)
+```
+
+
 ## `csv` Daten importieren
 
 - `read.csv` ist ein Befehl, der im Basispaket verfügbar ist.
@@ -254,5 +266,5 @@ devtools::install_github("lbusett/insert_table")
 
 ##  Übung - Importieren von Daten
 
-- Importiere die Daten des österreichischen Mikrozensus und verschaffe Dir einen ersten Überblick über die Daten.
+- Importieren Sie die `.xls` Datei zum Wohnumfeld ([**Link**](http://offenedaten.frankfurt.de/dataset/bauen-wohnen/resource/a4ecd696-45f0-4f4a-90c3-bb788beca8e5)) und verschaffen Sie Sich einen ersten Überblick über die Daten. 
 

@@ -63,7 +63,7 @@ new.folder.fig <- paste0(new.folder,"/figure/")
 
 setwd(new.folder)
 
-myfiles <- c("WarumR.Rmd","FreundGUI.Rmd","GrundlagenR.Rmd","Import.Rmd","Hilfe.Rmd","B2_Graphiken.Rmd")
+myfiles <- c("WarumR.Rmd","FreundGUI.Rmd","GrundlagenR.Rmd","Import.Rmd","Hilfe.Rmd","B2_Graphiken.Rmd","RModularerAufbau.Rmd")
 myfiles <- dir(new.folder) %>% grep(pattern = ".Rmd",value=T)
 
 

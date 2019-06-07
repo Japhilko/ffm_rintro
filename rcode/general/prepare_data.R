@@ -49,6 +49,7 @@ dat$wohnungsbestand <- datb[,18]
 
 
 dat$wohnraumversorgung_k <- datb$Wohnraumversorgung.Anzahl.der.Einwohnerinnen.und.Einwohner.je.Wohnung.2011
+
 ################
 # Daten anschauen
 
@@ -68,6 +69,27 @@ clust <- kmeans(datb[,c(9,10,11,12,13,14:25)],4)
 
 dat$clust <- clust$cluster
 
+################
+# txt Datensatz erzeugen
+
+datt <- data.frame(datb$Stadtteil)
+datt$Stadtteil=as.character(datt$Stadtteil)
+
+list_gc <- list()
+
+#install.packages("tmaptools")
+library(tmaptools)
+for (i in 1:length(datb$Stadtteil)){
+  list_gc[[i]] <- tmaptools::geocode_OSM(datt$Stadtteil[i])  
+}
+
+
+save(list_gc,file=paste0(data_path,"/list_gc.RData"))
+
+datt_gc <- cbind(datt,do.call(rbind,lapply(list_gc,function(x)x$coords)))
+
+
+write.table(datt_gc,file=paste0(data_path,"/datt_gc_ffm.txt"))
 
 
 ################
