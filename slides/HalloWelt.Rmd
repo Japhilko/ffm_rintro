@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - In welchem Bereich arbeiten Sie?
 - Welche Programme nutzen Sie bisher zur Datenanalyse?
-- Haben Sie schon einmal mit R gearbeitet, wie ist Ihr Kenntnisstand?
+- Haben Sie schon einmal mit R gearbeitet, wie würden Sie selbst Ihr Können beurteilen?
 - Was sind Ihre Erwartungen an den Kurs?
 
 <!--
@@ -35,12 +35,12 @@ Berkeley
 
 ## Disclaimer/ Informationen vorab
 
-Normalerweise gibt es große Unterschiede bei Vorkenntnissen und Fähigkeiten - bitte gebt Bescheid, wenn es zu schnell oder zu langsam geht oder etwas unklar geblieben ist.
+Normalerweise gibt es große Unterschiede bei Vorkenntnissen und Fähigkeiten - bitte geben Sie Bescheid, wenn es zu schnell oder zu langsam geht oder etwas unklar geblieben ist.
 
 - Wenn es Fragen gibt - immer fragen
 - In diesem Kurs gibt es viele [**Übungen**](http://web.math.ku.dk/~helle/R-intro/exercises.pdf), denn das Programmieren / die Nutzung von R lernt man am Ende nur allein.
-- Ich habe viele [**Beispiele**](https://www.showmeshiny.com/) - probiert sie aus 
-- R macht mehr Spaß zusammen - arbeitet zusammen!
+- Ich habe viele [**Beispiele**](https://www.showmeshiny.com/) 
+- R macht mehr Spaß zusammen.
 
 
 ## Unterlagen zu diesem Kurs
@@ -58,15 +58,15 @@ https://github.com/Japhilko/ffm_rintro
 - Eine praxisnahe Einführung in die statistische
 Programmiersprache R
 - Erlernen einer Programmier-Strategie
-- Guten Stil
+- Guten Programmierstil
 - Die Vorzüge graphischer Datenanalyse
 
 ### Das kann sie nicht leisten:
 
--  Eine Einführungsveranstaltung in die Statistik geben
--  Grundlegende datenanalytische Konzepte vermitteln
--  Verständnis zementieren
--  Das Trainieren abnehmen
+-  Eine Einführungsveranstaltung in die Statistik sein.
+-  Grundlegende datenanalytische Konzepte vermitteln.
+-  Verständnis zementieren.
+-  Das Trainieren abnehmen.
 
 
 ## Gründe R zu nutzen...

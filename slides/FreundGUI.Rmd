@@ -4,6 +4,9 @@ author: "Jan-Philipp Kolb"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 fontsize: 10pt
 output: 
+  slidy_presentation: 
+    highlight: haddock
+    keep_md: yes
   beamer_presentation: 
     fig_caption: no
     fig_height: 3
@@ -12,9 +15,6 @@ output:
     highlight: zenburn
     colortheme: whale
     theme: Warsaw
-  slidy_presentation: 
-    highlight: haddock
-    keep_md: yes
 ---
 
 
@@ -39,25 +39,26 @@ knitr::opts_chunk$set(echo = TRUE,message=F,warning = F)
 
 ## Graphisches User Interface
 
-Aber die meisten Menschen nutzen einen Editor oder ein graphical user interface (GUI).
+Aber die meisten Menschen nutzen einen Editor oder ein Graphisches User Interface (GUI).
 
 Aus den folgenden Gründen:
 
 - Syntax highlighting
 - Auto-Vervollständigung
-- Bessere Übersicht über Graphiken, Bibliotheken
+- Bessere Übersicht über Graphiken, Bibliotheken, Hilfeseiten
+- Erleichterter Import von Daten
+- Unterstützung zur Erstellung von Präsentationen, Postern und Apps
 
 ## Verschiedene GUIs
 
-- [Gedit](https://projects.gnome.org/gedit/) mit R-spezifischen Add-ons für Linux
+- [**Gedit**](https://projects.gnome.org/gedit/) mit R-spezifischen Add-ons für Linux
 
-- [Emacs](http://www.gnu.org/software/emacs/)
+- [**Emacs**](http://www.gnu.org/software/emacs/) mit Addin für R - Emacs speaks statistics ([**ESS**](https://ess.r-project.org/))
+- [**TinnR**](https://rclickhandbuch.wordpress.com/install-r/tinn-r/) war mal sehr angesagt, wird aber heute kaum noch genutzt. 
 
-- [TinnR](http://www.sciviews.org/Tinn-R/)
+- Ich nutze [**Rstudio !**](https://www.rstudio.com/)
 
-- Ich nutze [Rstudio!](https://www.rstudio.com/)
-
-![rstudio](figure/0_overall.jpg)
+![rstudio](figure/0_overall.jpg){height=70%}
 
 
 ## Wichtige Buttons
@@ -70,28 +71,40 @@ Aus den folgenden Gründen:
 
 ![](figure/find_replace.PNG) Suchen und Ersetzen
 
-## Alternativen zu Rstudio
+## Alternative zu Rstudio?
 
 ### RKward
 
 ![](figure/rkwardlogo.PNG)
 
-- Eigenständiges Programm - aus meiner Sicht nicht so praktikabel. 
-- Wenn ein umfangreiches Benutzerinterface gewünscht ist würde ich lieber SPSS oder [**PSPP**](https://www.gnu.org/software/pspp/) (freie Version) verwenden.
+- Viele Menüfunktionen und Fokus auf statistische Funktionen.
+- Aus meiner Sicht nicht so praktikabel. Wenn ein umfangreiches Benutzerinterface gewünscht ist würde ich lieber SPSS oder [**PSPP**](https://www.gnu.org/software/pspp/) (freie Version) verwenden.
 
-### Rcommander
+## Erweiterung durch Plugins möglich
+
+<!--
+- R-Paket `rkwarddev`
+-->
+
+```{r,eval=F,echo=F}
+# install.packages("rkwarddev")
+```
+
+![](figure/RKWard_R_package_management.png)
+
+## Rcommander
 
 - Lässt sich von RStudio aus starten.
 - Evtl. geeignet um in R reinzukommen.
 
-
+![](figure/RcmdrBASE.png)
 
 ## Aufgabe - Vorbereitung
 
 - Prüfen Sie, ob eine Version von R auf Rechner installiert ist.
-- Falls dies nicht der Fall ist, laden Sie [R](r-project.org)  runter und installieren Sie R.
+- Falls dies nicht der Fall ist, laden Sie [**R**](r-project.org)  runter und installieren Sie R.
 - Prüfen Sie, ob Rstudio installiert ist.
-- Falls nicht - [Installieren](http://www.rstudio.com/) sie Rstudio.
+- Falls nicht - [Installieren](http://www.rstudio.com/) Sie Rstudio.
 - Laden Sie die R-Skripte von meinem GitHub-Account
 - Erstellen Sie ein erstes Script und finden Sie das Datum mit dem Befehl `date()` und die R-version mit `sessionInfo()` heraus.
 

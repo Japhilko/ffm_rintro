@@ -19,12 +19,20 @@ output:
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,message=F,warning = F,cache=F, fig.height=4)
-GESIS <- T
+```
+## Eine Graphik sagt mehr als 1000 Worte.
+
+
+```{r,echo=F}
+sysinfo <- Sys.info()
+if (sysinfo["nodename"]=="MAC14077"){
+  GESIS <- T
+}else{
+  GESIS <- F
+}
 athome <- !GESIS
 ```
 
-
-## Eine Graphik sagt mehr als 1000 Worte.
 
 ### Aussagen zu Graphen in R
 

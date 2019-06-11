@@ -1,19 +1,6 @@
 # Jan-Philipp Kolb
 # Thu Jun 06 07:22:25 2019
 
-#-------------------------------------------------#
-# Installing necessary packages
-#-------------------------------------------------#
-
-necpackages <- c("knitr","rmarkdown","tidyverse")
-
-
-for (i in 1:length(necpackages)){
-  if (!require(necpackages[i])){
-    install.packages(necpackages[i])    
-  }
-  library(necpackages[i])
-}
 
 #-------------------------------------------------#
 # Load libraries
@@ -27,7 +14,8 @@ library(lme4)
 # Define paths
 #-------------------------------------------------#
 
-main_path <- "D:/github/ffm_rintro/"
+main_path <- "D:/Daten/github/ffm_rintro/"
+# main_path <- "D:/github/ffm_rintro/"
 slide_path <- paste0(main_path,"slides/")
 rcode_path <- paste0(main_path,"rcode/")
 

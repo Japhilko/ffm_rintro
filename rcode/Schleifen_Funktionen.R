@@ -1,15 +1,87 @@
 ## ----setup, include=FALSE------------------------------------------------
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = T)
 
 
 ## ------------------------------------------------------------------------
-  # Ein Container für die Ergebnisse
-usq <- vector()
+load("../data/bauenwohnen_teil.RData")
 
-for(i in 1:10) {
-  usq[i] <- i*i
-  print(usq[i],"\n")
+
+## ------------------------------------------------------------------------
+head(dat$Stadtteil)
+
+
+## ------------------------------------------------------------------------
+(dat$stadtteil_l <- paste("Frankfurt",dat$Stadtteil))
+
+
+## ------------------------------------------------------------------------
+library(tmaptools)
+
+
+## ----eval=F--------------------------------------------------------------
+## (gc1 <- geocode_OSM("Frankfurt Altstadt"))
+
+
+## ----eval=F--------------------------------------------------------------
+## gc2 <- geocode_OSM("Frankfurt Altstadt",details = T)
+
+
+## ----eval=F,echo=F-------------------------------------------------------
+## save(gc2,file="../data/ffm_gc2.RData")
+
+
+## ----echo=F--------------------------------------------------------------
+load("../data/ffm_gc2.RData")
+
+
+## ------------------------------------------------------------------------
+names(gc2)
+
+
+## ----eval=T--------------------------------------------------------------
+for (i in 1:4){
+  cat(i, "\n")
 }
 
-print(i)
+
+## ----eval=F--------------------------------------------------------------
+## erg <- list()
+## 
+## for (i in 1:ncol(dat)){
+##   erg[[i]] <- summary(dat)
+##   cat(i, "\n")
+## }
+
+
+## ----eval=F,echo=F-------------------------------------------------------
+## ## Funktionen in R
+## getgeocode <- function(gc_object){
+##   x <- gc_object$coords
+##   return(x)
+## }
+
+
+## ----eval=F--------------------------------------------------------------
+## erg <- list()
+## for(i in 1:nrow(dat)){
+##   erg[[i]] <- geocode_OSM(dat$stadtteil_l[i])
+## }
+
+
+## ----eval=F,echo=F-------------------------------------------------------
+## save(erg,file="../data/gc_list_stadtteile_ffm.RData")
+
+
+## ----echo=F--------------------------------------------------------------
+load("../data/gc_list_stadtteile_ffm.RData")
+
+
+## ------------------------------------------------------------------------
+erg2 <- lapply(erg,function(x)x$coords)
+df_gc1 <- do.call(rbind,erg2)
+df_gc <- data.frame(dat$Stadtteil,df_gc1)
+
+
+## ------------------------------------------------------------------------
+head(df_gc)
 

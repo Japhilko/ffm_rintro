@@ -65,7 +65,7 @@ setwd(new.folder)
 
 myfiles <- c("WarumR.Rmd","FreundGUI.Rmd","GrundlagenR.Rmd","Import.Rmd",
              "Hilfe.Rmd","B2_Graphiken.Rmd","RModularerAufbau.Rmd",
-             "Export.Rmd")
+             "Export.Rmd","logreg.Rmd")
 myfiles <- dir(new.folder) %>% grep(pattern = ".Rmd",value=T)
 
 

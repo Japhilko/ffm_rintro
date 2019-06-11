@@ -18,7 +18,7 @@ output:
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,warning=F,echo=F)
 ```
 
 
@@ -164,7 +164,7 @@ R-project + "was ich schon immer wissen wollte"
 
 ## [Das Paket `swirl`](https://swirlstats.com/)
 
-![](figure/swirl.PNG)
+![](figure/swirl.png)
 
 ## Der Start mit `swirl`
 

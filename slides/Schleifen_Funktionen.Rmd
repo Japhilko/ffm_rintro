@@ -17,8 +17,8 @@ output:
     keep_md: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = T)
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = T,warning=F,message=F)
 ```
 
 ## Inhalt dieses Beispiels
@@ -159,3 +159,6 @@ df_gc <- data.frame(dat$Stadtteil,df_gc1)
 head(df_gc)
 ```
 
+<!--
+## [Funktionen in R](https://swcarpentry.github.io/r-novice-inflammation/02-func-R/)
+-->
