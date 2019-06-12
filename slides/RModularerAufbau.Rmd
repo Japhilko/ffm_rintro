@@ -4,9 +4,6 @@ author: "Jan-Philipp Kolb"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 fontsize: 10pt
 output: 
-  slidy_presentation: 
-    highlight: haddock
-    keep_md: yes
   beamer_presentation: 
     fig_caption: no
     fig_height: 3
@@ -15,6 +12,9 @@ output:
     highlight: zenburn
     colortheme: whale
     theme: Warsaw
+  slidy_presentation: 
+    highlight: haddock
+    keep_md: yes
 ---
 
 
@@ -128,7 +128,7 @@ install_github("hadley/ggplot2")
 install.packages("Rcmdr")
 ```
 
-```{r}
+```{r,eval=F}
 library(Rcmdr)
 ```
 

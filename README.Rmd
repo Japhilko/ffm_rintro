@@ -34,14 +34,18 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](https://github.com/J
 - Modularer Aufbau von R ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/ModularerAufbau.md) |
  [pdf](slides/ModularerAufbau.pdf) | [rcode](https://github.com/Japhilko/IntroR/blob/master/2019/rcode/InstallPackages.R))
 
+<!--
     - Aufgabe Zusatzpakete ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/tutorial/Aufgabe_Zusatzpakete.md))
+-->
 
 ## Rein und raus – Datenimport und -export
 
 
 - Datenimport ([Browser](slides/Import.md) | [pdf](slides/Import.pdf) | [rcode](slides/Import.R))
 
+<!--
     - Aufgabe Datenimport ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/tutorial/Aufgabe_Datenimport.md))
+-->
 
 - Datenexport ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/Export.md) | [pdf](slides/Export.pdf) | [rcode](slides/Export.R))
 
@@ -54,7 +58,9 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](https://github.com/J
 
 - Datenverarbeitung ([Browser](slides/DatenVerarbeitung.Rmd) | [pdf](slides/Datenanalyse.pdf) | [rcode](rcode/Datenanalyse.R))
 
+<!--
     - Aufgabe - Apply Funktion verwenden ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/tutorial/Aufgabe_Apply.md))
+-->
 
 ## Liebe auf den ersten Plot – Grafiken mit R	
 

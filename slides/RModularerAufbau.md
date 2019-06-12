@@ -1,7 +1,7 @@
 ---
 title: "Einführung in R - Modularer Aufbau von R"
 author: "Jan-Philipp Kolb"
-date: "11 Juni, 2019"
+date: "12 Juni, 2019"
 fontsize: 10pt
 output: 
   slidy_presentation: 
@@ -29,7 +29,7 @@ output:
 - Viele Funktionen sind in Basis-R enthalten. 
 - Spezifische Funktionen sind in zusätzlichen Paketen integriert.
 - R kann modular durch sogenannte Pakete oder Bibliotheken erweitert werden.
-- Die wichtigsten Pakete werden auf CRAN gehostet (14289 Pakete am 11 Juni 2019)
+- Die wichtigsten Pakete werden auf CRAN gehostet (14331 Pakete am 12 Juni 2019)
 <!--
 https://www.statmethods.net/input/dates.html
 -->
