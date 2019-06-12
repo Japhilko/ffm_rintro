@@ -132,3 +132,16 @@ dat <- xmlParse("http://offenedaten.frankfurt.de/dataset/912fe0ab-8976-4837-b591
 
 
 # https://r4ds.had.co.nz/data-import.html
+
+
+##############################
+# Gesis Panel Daten vorbereiten
+
+# (load("D:/gitlab/r_intro_gp18/data/ZA5666_v1-0-0_small.RData"))
+(load("D:/gitlab/IntroDataAnalysis/data/ZA5666_v1-0-0_medium_fac.RData"))
+
+dat <- datf[,c("a11d056z","a11d094a","bczd001a","a11c019a","bdao067a","a11d096b","a11c020a")]
+
+dats <- dat[sample(1:nrow(dat),1000,replace=T),]
+
+save(dats,file="../data/gp_small.RData")

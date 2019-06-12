@@ -19,9 +19,13 @@ output:
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = T,warning=F,message=F)
+library(knitr)
+# library(kableExtra)
 ```
 
 ## Inhalt dieses Beispiels
+
+### Motivation
 
 - Im Prinzip sollte man immer versuchen Aufgaben zu vektorisieren (`apply` Befehlsfamilie).
 - Allerdings können Schleifen auch sehr nützlich sein. 
@@ -30,8 +34,8 @@ knitr::opts_chunk$set(echo = T,warning=F,message=F)
 ### Arbeitsschritte
 
 - Beispieldaten laden
-- Geokodierung durchführen
-- Schleifen und Funktionen
+- Geokodierung durchführen.
+- Schleifen schreiben und anwenden.
 
 ## Daten laden
 
@@ -162,3 +166,116 @@ head(df_gc)
 <!--
 ## [Funktionen in R](https://swcarpentry.github.io/r-novice-inflammation/02-func-R/)
 -->
+
+## Beispiel Funktionen
+
+### Motivation
+
+- Funktionen können sehr nützlich sein, bspw. um sich eine Menge Schreibarbeit zu ersparen. - Später kann man sich ganz individuelle Lösungen bauen 
+
+### Arbeitsschritte
+
+Im GESIS Panel sind fehlende Werte mit Minuswerten kosiert. Diese sollten durch das Systemmissing von R ersetzt werden um korrekte Berechnungen (bspw. Mittelwert) zu ermöglichen.
+
+- Beispieldaten laden
+- Fehlende Werte ersetzen
+- Funktion schreiben und anwenden
+
+
+
+## Das GESIS Panel 
+
+- Wahrscheinlichkeitsbasiertes  Access Panel für Individuen: - Allgemeine Bevölkerung in Deutschland, Deutschsprachhige Bevölkerung, 18-70 Jahre
+- Panelisten wurden aus den Melderegistern rekrutiert  - (270 Sampling Points) 
+7599 face-to-face Interviews (CAPI)
+- Ungefähr 5000 Panelisten (Basis Stichprobe / erste Kohorte 2014)
+
+## Das GESIS Panel Campus File
+
+![](figure/gpdata.PNG)
+
+## Die Daten herunterladen
+
+- Übersichtsseite: [**GESIS Panel Campus File**](https://www.gesis.org/gesis-panel/data/gesis-panel-campus-file/)
+- Registrierung notwendig
+
+
+### Links für den Download:
+
+- [**Download `.csv`**](https://dbk.gesis.org/dbksearch/download.asp?db=D&id=62367)
+- [**Download `.sav`**](https://dbk.gesis.org/dbksearch/download.asp?db=D&id=62369)
+- [**Download `**14.dta`**](https://dbk.gesis.org/dbksearch/download.asp?db=D&id=62371)
+
+
+![](figure/filenamesGP2.PNG)
+
+## Datensatz importieren
+
+```{r}
+load("../data/gp_small.RData")
+head(dats)
+```
+
+
+## Die Missing Codes im GESIS Panel
+
+<!--
+![](figure/MissingScheme.PNG)
+-->
+
+
+```{r,echo=F}
+misscodes <- c(-11,-22,-33,-44,-55,-66,-77,-88,-99,-111)
+missvallab <- c("Not invited","Not in panel","Unit nonresponse","Missing by m.o.p.","Missing by technical error","Missing by design","Not reached","Missing by filter","Item nonresponse","Ambiguous answer")
+missremark <- c("only in recruitment waves as long as the respective profile survey is not yet finished","not willing to join the panel after recruitment interview or actively signing off the panel","invited but not participating in corresponding wave","mode of participation (m.o.p.): online or offline","e.g. questionnaire programming error","experimental variation","only in online mode: panelist has not seen the item","filtered item","due to nonresponse by the respondent","ambiguous answers in questionnaire")
+
+missremark2 <- c("only in recruitment waves - when profile survey not finished","not willing to join the panel after recruitment or signing off","invited but not participating in corresponding wave","mode of participation (m.o.p.): online or offline","e.g. questionnaire programming error","experimental variation","only in online mode: panelist has not seen the item","filtered item","due to nonresponse by the respondent","ambiguous answers in questionnaire")
+
+df <- data.frame(Value=misscodes,"Value label"=missvallab,Remark=missremark2)
+```
+
+```{r,eval=T}
+kable(df,row.names = F) 
+```
+
+```{r,eval=F}
+df %>% regulartable() %>% autofit() %>% 
+width(j=~Value,width=1) %>% width(j=~Value.label,width=1)%>% width(j=~Remark,width=1)
+```
+
+
+## Fehlende Werte ersetzen
+
+```{r}
+mean(dats$a11d056z)
+```
+
+```{r}
+dats$a11d056z[dats$a11d056z==-99] <- NA
+mean(dats$a11d056z)
+mean(dats$a11d056z,na.rm=T)
+```
+
+## Eine Funktion um die fehlenden Werte zu ersetzen
+
+```{r,eval=F,echo=F}
+code_miss <- function(var){
+  misvals <- c(-11,-22,-33,-44,-55,-66,-77,-88,-99,-111)
+  var[var %in% misvals] <- NA
+  return(var)
+}
+
+```
+
+```{r}
+code_miss <- function(var){
+  var[var==-99] <- NA
+  return(var)
+}
+```
+
+## Aufgabe - Funktion erweitern
+
+- Laden Sie den synthetischen Datensatz des GESIS Panels von Github herunter und importieren Sie ihn in R.
+- Erweitern Sie die Funktion auf der vorhergehenden Folie so, dass auch die anderen fehlenden Werte durch `NA` ersetzt werden. 
+- Wenden Sie die Funktion auf den ganzen Datensatz an und ersetzen Sie alle fehlenden Werte mit `NA`

@@ -1,0 +1,39 @@
+---
+title: "Datenanalyse"
+author: "Jan-Philipp Kolb"
+date: "7 6 2019"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 
+
+<!--
+ Einfache Karten
+ 
+ Clusteranalyse 
+ 
+ Anova
+ 
+ Schleifen in R
+ https://swcarpentry.github.io/r-novice-inflammation/15-supp-loops-in-depth/
+ 
+ 
+ Beispiele ausbauen
+ https://www.r-exercises.com/2018/04/27/well-behaved-functions-exercises/
+ 
+ http://www.r-tutor.com/r-introduction
+ 
+ XML Daten einlesen
+ http://www.offenedaten.frankfurt.de/dataset/parkdaten-dynamisch
+ http://www.informit.com/articles/article.aspx?p=2215520
+ https://github.com/jennybc/manipulate-xml-with-purrr-dplyr-tidyr
+ https://blog.rstudio.com/2015/04/21/xml2/
+ https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781783989065/1/ch01lvl1sec11/reading-xml-data
+ https://jennybc.github.io/purrr-tutorial/ex24_xml-wrangling.html
+ https://www.r-bloggers.com/new-r-package-flatxml-working-with-xml-files-as-r-dataframes/
+ https://stackoverflow.com/questions/33446888/r-convert-xml-data-to-data-frame
+-->
