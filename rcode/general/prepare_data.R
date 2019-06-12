@@ -145,3 +145,20 @@ dat <- datf[,c("a11d056z","a11d094a","bczd001a","a11c019a","bdao067a","a11d096b"
 dats <- dat[sample(1:nrow(dat),1000,replace=T),]
 
 save(dats,file="../data/gp_small.RData")
+
+#####################
+
+library(Rcmdr)
+
+library(xlsx)
+?write.xlsx
+
+##########################
+
+data(iris)
+
+iris2 <- data.frame(iris)
+
+?iris
+
+write.xlsx2()

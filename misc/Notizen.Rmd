@@ -9,7 +9,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## 
+## Folgende Einstellungen eignen sich gut für Rstudio
 
 Editor Fond - Consolas
 Editor Theme - Xcode
+
+## Erweiterungsmöglichkeiten
+
+- Möglichkeit vorstellen den Code zu strukturieren
+

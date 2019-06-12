@@ -457,6 +457,23 @@ tapply(ApplyDat$Income,
 - Erstellen Sie eine Variable `wbkat`, in der sie die Wahlbeteiligung in den Stadtteilen in fünf Kategorien einteilen. 
 - Berechnen Sie mit Hilfe des `tapply` Befehls den durchschnittlichen Anteil der AFD pro Wahlbeteiligungskategorie.
 
+<!--
+## Übung - `apply` Funktion anwenden
+
+- Erstellen Sie eine Matrix A mit 4 Zeilen und 25 Spalten, die die Werte 1 bis 100 enthält. Analog dazu erstellen Sie eine Matrix B mit 25 Zeilen und 4 Spalten, die die Werte 1 bis 100 enthält.
+
+- Berechnen Sie mittels dem `apply()`-Befehl den Mittelwert und die Varianz für jede Zeile von A bzw. B.
+
+- Berechnen Sie mittels dem `apply()`-Befehl den Mittelwert und die Varianz für jede Spalte von
+A bzw. B.
+
+- Standardisieren ist eine häufige Transformation von        Daten;        dafür        wird        der        Mittelwert        von der entsprechenden        Zeile        oder        Spalte        abgezogen        und        durch        die        entsprechende        Standardabweichung         geteilt.             Somit         besitzen         die         Daten         einen         Mittelwert         von         0         und         eine         Standardab-
+weichung        von        1.           Standardisieren        Sie        die        Spalten        der        Matrix
+A
+.
+-->
+
+
 ## Edgar Anderson's Iris Datensatz
 
 ```{r}
@@ -479,7 +496,7 @@ head(iris[,1:4])
 
 - [**Wikipedia Artikel zum IRIS Datensatz**](https://en.wikipedia.org/wiki/Iris_flower_data_set)
 
-## Zusammenhang zwischen kontinuierliche Variablen
+## Zusammenhang zwischen kontinuierlichen Variablen
 
 ```{r}
 # Pearson correlation coefficient
