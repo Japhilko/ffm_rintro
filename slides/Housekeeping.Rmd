@@ -126,20 +126,39 @@ sp::spplot(ffm_shp,"Einwohnerdichte")
 
 ## Thematische Karte mit `tmap`
 
-```{r,eval=F}
+```{r,eval=F,echo=F}
 install.packages("tmap")
 ```
 
 
-```{r,eval=F}
+```{r}
 tmap::qtm(ffm_shp,"Einwohnerdichte")
 ```
 
 
 ## Die Daten matchen
 
-```{r}
+- Indikatoren matchen und hoffen, dass keine NA`s auftauchen.
 
+```{r}
+ind <- match(ffm_shp$STTLNAME,dat$Stadtteil)
+ind
+```
+
+## Wo hakt es?
+
+```{r}
+dat_ffm <- data.frame(ffm_shp$STTLNAME,dat$Stadtteil)
+dat_ffm[is.na(ind),]
+```
+
+## Werte manuell zuordnen
+
+```{r}
+ffm_shp$STTLNAME[which(is.na(ind))]
+nas1 <- ffm_shp$STTLNAME[which(is.na(ind))][1]
+agrep(nas1,dat$Stadtteil)
+ind[which(is.na(ind))[1]] <- agrep(nas1,dat$Stadtteil)
 ```
 
 
