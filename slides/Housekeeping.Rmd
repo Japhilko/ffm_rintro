@@ -112,10 +112,12 @@ head(ffm_shp@data)
 
 ## Inhaltliche Daten hinzufügen
 
+- Voraussetzung: in beiden Datensätzen befinden sich die Stadtteile in der gleichen Ordnung.
+
 ```{r}
 dat <- read.csv2("../data/bauenwohnen.csv")
 ffm_shp@data$Einwohnerdichte <- 
-  dat$Wohnumfeld...öffentlicher.Raum.Einwohnerdichte.je.ha.2012
+dat$Wohnumfeld...öffentlicher.Raum.Einwohnerdichte.je.ha.2012
 ```
 
 ## Eine thematische Karte plotten
@@ -123,6 +125,14 @@ ffm_shp@data$Einwohnerdichte <-
 ```{r}
 sp::spplot(ffm_shp,"Einwohnerdichte")
 ```
+
+## Eine andere Farbpalette
+
+```{r}
+sp::spplot(ffm_shp,"Einwohnerdichte",col.regions=colorRampPalette(c('dark red','white','dark blue'))
+```
+
+
 
 ## Thematische Karte mit `tmap`
 
@@ -170,8 +180,20 @@ gpdat <- foreign::read.spss(paste0(data_path,
             "ZA5666_v1-0-0.sav"),to.data.frame=TRUE)
 att_dat <- attributes(gpdat)
 names(att_dat)
+```
+
+```
+## "names"           "class"           "row.names"       "variable.labels" "codepage"
+```
+
+## Die Variablenlabels
+
+```{r,eval=F}
 att_dat$variable.labels
 ```
+
+![](figure/variable_labels.PNG)
+
 
 ```{r,eval=F,echo=F}
 gpdat <- haven::read_sav(paste0(data_path,"ZA5666_v1-0-0.sav"))
@@ -194,6 +216,13 @@ https://www.r-statistics.com/tag/boxplot-outlier/
   
 
 ## Destatis Daten
+
+- Für die Nutzung der API ist vermutlich das `httr` Paket hilfreich
+
+```{r,eval=F}
+install.packages("httr")
+```
+
 
 ```{r,eval=F}
 devtools::install_github("cutterkom/destatiscleanr")

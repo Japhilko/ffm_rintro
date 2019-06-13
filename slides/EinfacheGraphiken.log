@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.7)  13 JUN 2019 07:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.7)  13 JUN 2019 08:29
 entering extended mode
 **./EinfacheGraphiken.tex
 (EinfacheGraphiken.tex
@@ -2456,7 +2456,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1310.
 Here is how much of TeX's memory you used:
  25211 strings out of 493337
  467799 string characters out of 3139439
- 524062 words of memory out of 3000000
+ 524063 words of memory out of 3000000
  27888 multiletter control sequences out of 15000+200000
  55512 words of font info for 61 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
@@ -2469,7 +2469,7 @@ m Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX
 2.9/fonts/type1/public/lm/lmsso10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/lm/lmtcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk1
 0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on EinfacheGraphiken.pdf (62 pages, 4257194 bytes).
+Output written on EinfacheGraphiken.pdf (62 pages, 4256465 bytes).
 PDF statistics:
  809 PDF objects out of 1000 (max. 8388607)
  186 named destinations out of 1000 (max. 500000)
