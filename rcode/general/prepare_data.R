@@ -5,7 +5,6 @@
 # set paths ---------------------------------------------------------------
 
 
-
 git_path <- "D:/Daten/GitHub/ffm_rintro/"
 data_path <- paste0(git_path,"data/")
 

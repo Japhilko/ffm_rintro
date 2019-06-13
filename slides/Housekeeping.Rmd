@@ -18,22 +18,40 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = T)
 ```
+
+
+## [Pakete automatisch installieren](https://stackoverflow.com/questions/4090169/elegant-way-to-check-for-missing-packages-and-install-them)
+
+```{r,echo=F}
+my_packages <- installed.packages()
+mypack <- my_packages[,"Package"]
+```
+
 
 <!--
 
 -->
 
-## [Pakete automatisch installieren](https://stackoverflow.com/questions/4090169/elegant-way-to-check-for-missing-packages-and-install-them)
+- Mit `installed.packages()` kann ich herausfinden, welche Pakete installiert sind.
+- Bei mir sind es momentan `r length(mypack)` Pakete.
 
-```{r}
+```{r,eval=F}
 my_packages <- installed.packages()
 mypack <- my_packages[,"Package"]
-head(my_packages[,"Package"])
 ```
 
+```{r}
+my_packages[,"Package"]
+```
+
+
 ## Fehlende Pakete installieren
+
+- Zunächst wird eine Liste (bspw. `packlist`) mit den benötigten Paketen erstellt.
+- Dann wird geprüft ob diese Pakete unter den installierten Paketen sind.
+- Zuletzt werden Pakete installiert, die noch nicht vorhanden sind. 
 
 ```{r,eval=F}
 packlist <- c("ggplot2", "Rcpp")
@@ -53,11 +71,14 @@ https://support.rstudio.com/hc/en-us/articles/204463668-Code-Snippets
 
 ## Die Funktion `source`
 
+- Wenn das Argument `echo=T` gesetzt ist, sieht man auch was innerhalb des Skripts passiert. 
+- Die Funktion eignet sich, bspw. wenn immer wieder die gleichen Arbeitsschritte durchgeführt werden, die selten verändert werden müssen. 
+
 ```{r,eval=F}
-source("../rcode/load_packages.R")
+source("../rcode/load_packages.R",echo=T)
 ```
 
-## [Snippets - um automatisch Codekopf einzufügen](https://stackoverflow.com/questions/40616132/create-a-default-comment-header-template-in-r)
+## [Snippets - für einen automatischen Header](https://stackoverflow.com/questions/40616132/create-a-default-comment-header-template-in-r)
 
 Tools > Golbal Options
 
@@ -65,16 +86,6 @@ Tools > Golbal Options
 
 ![](figure/exsnippet.PNG)
 
-
-## Destatis Daten
-
-```{r,eval=F}
-devtools::install_github("cutterkom/destatiscleanr")
-```
-
-```{r}
-library(destatiscleanr)
-```
 
 
 <!--
@@ -89,7 +100,8 @@ r-project + create automatic header for Scriptfiles
 ## Shapefiles importieren
 
 ```{r}
-ffm_shp <- rgdal::readOGR("../data/Stadtteile_Frankfurt_am_Main.shp")
+ffm_shp <- rgdal::readOGR(
+  "../data/Stadtteile_Frankfurt_am_Main.shp")
 ```
 
 ## Der Datenslot 
@@ -112,3 +124,68 @@ ffm_shp@data$Einwohnerdichte <-
 sp::spplot(ffm_shp,"Einwohnerdichte")
 ```
 
+## Thematische Karte mit `tmap`
+
+```{r,eval=F}
+install.packages("tmap")
+```
+
+
+```{r,eval=F}
+tmap::qtm(ffm_shp,"Einwohnerdichte")
+```
+
+
+## Die Daten matchen
+
+```{r}
+
+```
+
+
+## Belabelter SPSS Datensatz
+
+```{r,eval=F}
+data_path <- "D:/gitlab/IntroDataAnalysis/data/"
+gpdat <- foreign::read.spss(paste0(data_path,
+            "ZA5666_v1-0-0.sav"),to.data.frame=TRUE)
+att_dat <- attributes(gpdat)
+names(att_dat)
+att_dat$variable.labels
+```
+
+```{r,eval=F,echo=F}
+gpdat <- haven::read_sav(paste0(data_path,"ZA5666_v1-0-0.sav"))
+```
+
+<!--
+## Boxplot mit Ausreißern
+
+
+```{r}
+y <- c(rnorm(99),20)
+boxplot(y)
+boxplot(y,range=2)
+```
+-->
+
+<!--
+https://www.r-statistics.com/tag/boxplot-outlier/
+-->
+  
+
+## Destatis Daten
+
+```{r,eval=F}
+devtools::install_github("cutterkom/destatiscleanr")
+```
+
+```{r}
+library(destatiscleanr)
+```
+
+![](figure/destatiscleaner.PNG)
+
+<!--
+https://cran.r-project.org/web/packages/request/README.html
+-->

@@ -23,7 +23,7 @@ library(knitr)
 # library(kableExtra)
 ```
 
-## Inhalt dieses Beispiels
+## Beispiel Schleifen
 
 ### Motivation
 
@@ -166,6 +166,26 @@ head(df_gc)
 <!--
 ## [Funktionen in R](https://swcarpentry.github.io/r-novice-inflammation/02-func-R/)
 -->
+
+## Alle R-Dateien in einem Ordner
+
+```{r}
+dirn <- dir("../data/")
+head(dirn)
+grep(".RData",dirn)
+head(rdat <- grep(".RData",dirn,value = T))
+```
+
+## Diese Dateien einlesen
+
+```{r,eval=F}
+for (i in 1:length(rdat)){
+  load(rdat[i])
+  cat(rdat[i],"\n")
+}
+```
+
+
 
 ## Beispiel Funktionen
 

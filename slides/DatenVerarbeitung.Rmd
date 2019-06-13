@@ -367,7 +367,7 @@ rownames(dat)
 
 ## Exkurs - Wie man Labels verwendet 
 
-### Werkzeuge für das Arbeiten mit kategorischen Variablen (Faktoren) 
+### Werkzeuge für das Arbeiten mit kategorialen Variablen (Faktoren) 
 
 ```{r}
 library("forcats") 
@@ -379,7 +379,7 @@ library("forcats")
 
 ## Der Befehl `fct_count`
 
-### Freizeit Häufigkeit: Bücher lesen (a11c026a)
+### Wahlbeteiligung - fünf Kategorien
 
 ```{r,echo=F}
 dat$wbkat5 <-as.factor(cut(dat$Wahlbeteiligung,5,labels=F))
@@ -454,6 +454,7 @@ tapply(ApplyDat$Income,
 
 ## Übung  - `tapply()` Befehl verwenden
 
+- Importieren Sie den [**Datensatz zur Landtagswahl in Hessen 2018**](http://offenedaten.frankfurt.de/dataset/landtagswahl-hessen-2018/resource/98812021-fc2a-446b-88c0-67e5180af948)
 - Erstellen Sie eine Variable `wbkat`, in der sie die Wahlbeteiligung in den Stadtteilen in fünf Kategorien einteilen. 
 - Berechnen Sie mit Hilfe des `tapply` Befehls den durchschnittlichen Anteil der AFD pro Wahlbeteiligungskategorie.
 
@@ -519,6 +520,9 @@ cor(iris[,1:4])
 # Kendall's tau (rank correlation)
 cor(iris[,1:4], method = "kendall") 
 ```
+
+
+## Spearman's $\rho$
 
 ```{r}
 # Spearman's rho (rank correlation)

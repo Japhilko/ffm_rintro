@@ -1,7 +1,7 @@
 ---
 title: "Einführung in die Datenanalyse mit R"
 author: "Jan-Philipp Kolb"
-date: "12 Juni, 2019"
+date: "13 Juni, 2019"
 output: 
   html_document: 
     keep_md: yes
@@ -22,8 +22,9 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](https://github.com/J
 
 - Grundlagen im Umgang mit der Sprache R ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/GrundlagenR.md) | [pdf](slides/GrundlagenR.pdf) | [rcode](https://github.com/Japhilko/IntroR/blob/master/2019/slides/GrundlagenR.R) )
 
+<!--
     - Aufgabe: Zuweisungen und Funktionen ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/tutorial/Aufgabe_Zuweisung.md))
-
+-->
 
 - Wie bekommt man Hilfe? ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/Hilfe.md) |
 [pdf](slides/Hilfe.pdf) |
@@ -45,7 +46,7 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](https://github.com/J
     - Aufgabe Datenimport ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/tutorial/Aufgabe_Datenimport.md))
 -->
 
-- Datenexport ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/slides/Export.md) | [pdf](slides/Export.pdf) | [rcode](slides/Export.R))
+- Datenexport ([Browser](slides/Export.md) | [pdf](slides/Export.pdf) | [rcode](slides/Export.R))
 
 ## Ein erster Eindruck – Was uns die Daten sagen
 
@@ -54,7 +55,7 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](https://github.com/J
 ([Browser](slides/datenanalyse_ffm.Rmd)| [pdf](slides/datenanalyse_ffm) |  [rcode](https://github.com/Japhilko/IntroR/blob/master/2019/rcode/datenanalyse_ffm.R))
 -->
 
-- Datenverarbeitung ([Browser](slides/DatenVerarbeitung.Rmd) | [pdf](slides/Datenanalyse.pdf) | [rcode](rcode/Datenanalyse.R))
+- Datenverarbeitung ([Browser](slides/DatenVerarbeitung.Rmd) | [pdf](slides/DatenVerarbeitung.pdf) | [rcode](rcode/DatenVerarbeitung.R))
 
 <!--
     - Aufgabe - Apply Funktion verwenden ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/tutorial/Aufgabe_Apply.md))
@@ -78,7 +79,9 @@ Unterlagen für den Kurs 2019. Die Foliensätze sind [hier](https://github.com/J
 
 - Die lineare Regression ([Browser](slides/LineareRegression.md) | [pdf](slides/LineareRegression.pdf) | [rcode](rcode/LineareRegression.R))
 
+<!--
     - Aufgabe - lineare Regression ([Browser](https://github.com/Japhilko/IntroR/blob/master/2019/tutorial/Aufgabe_LineareRegression.md))
+-->
 
 - Die logistische Regression ([Browser](slides/logistischeRegression.md) | [pdf](slides/logistischeRegression.pdf) | [rcode](rcode/logistischeRegression.R))
 

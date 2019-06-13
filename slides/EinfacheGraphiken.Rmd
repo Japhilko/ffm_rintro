@@ -307,6 +307,27 @@ boxplot(dat$wohnungsbestand~dat$Spiel100K,horizontal=TRUE)
 ![](figure/boxplot_sex.PNG)
 -->
 
+## Boxplot mit Ausreißern
+
+```{r}
+x <- c(runif(99),50)
+boxplot(x,horizontal = T)
+```
+
+## Das `ylim` Argument
+
+- Folgendes funktioniert auch mit `xlim`, wenn `horizontal=F`
+
+```{r}
+boxplot(x,horizontal = T,ylim=c(0,1))
+```
+
+## Werte logarithmieren
+
+```{r}
+boxplot(log(x),horizontal = T)
+```
+
 
 ## Boxplot Alternativen - `vioplot` 
 
