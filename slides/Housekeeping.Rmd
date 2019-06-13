@@ -129,7 +129,9 @@ sp::spplot(ffm_shp,"Einwohnerdichte")
 ## Eine andere Farbpalette
 
 ```{r}
-sp::spplot(ffm_shp,"Einwohnerdichte",col.regions=colorRampPalette(c('dark red','white','dark blue'))
+library(colorRamps)
+sp::spplot(ffm_shp,"Einwohnerdichte",
+           col.regions=matlab.like(100))
 ```
 
 
