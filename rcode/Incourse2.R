@@ -202,3 +202,24 @@ code_miss <- function(var,main="Überschrift"){
   plot(var)
   return(var)
 }
+
+
+#######
+# Links
+
+# Karten erzeugen
+# https://www.uni-regensburg.de/wirtschaftswissenschaften/vwl-tschernig/medien/programmieren-mit-r/pir_tut_geomapping.r
+
+# Genesis Webservices
+# https://www-genesis.destatis.de/genesis/misc/GENESIS-Webservices_Einfuehrung.pdf
+
+# Farbgestaltung
+# https://www.rdocumentation.org/packages/grDevices/versions/3.6.0/topics/colorRamp
+
+# Ausreißer Boxplot
+# https://www.r-statistics.com/tag/boxplot-outlier/
+# https://stackoverflow.com/questions/14207739/how-to-remove-outliers-in-boxplot-in-r
+# https://community.rstudio.com/t/outliers-in-box-plots/27854
+
+# API`s nutzen
+# https://cran.r-project.org/web/packages/request/README.html`
